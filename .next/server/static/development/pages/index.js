@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -187,7 +187,7 @@ const Index = props => {
 const ButtonContainer = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "countbutton__ButtonContainer",
   componentId: "sc-1wih92-0"
-})(["position:relative;width:100px;height:200px;border-radius:20px;border:1px solid black;cursor:pointer;.plusButton{position:absolute;top:0px;width:100px;height:35%;border:0px;.text{width:100%;transform:translate(0%,30%);text-align:center;font-size:30px;}}input{position:absolute;top:35%;width:100%;height:30%;border:0px;text-align:center;font-size:30px;outline:none;cursor:text;}.minusButton{position:absolute;bottom:0px;width:100px;height:35%;.text{width:100%;bottom:0px;transform:translate(0%,30%);text-align:center;font-size:30px;}}"]);
+})(["position:relative;width:100px;height:200px;border-radius:20px;border:1px solid black;cursor:pointer;.plusButton{position:absolute;top:0px;width:100%;height:35%;border:0px;.text{width:100%;transform:translate(0%,30%);text-align:center;font-size:30px;}}input{position:absolute;top:35%;width:100%;height:30%;border:0px;text-align:center;font-size:30px;outline:none;cursor:text;}.minusButton{position:absolute;bottom:0px;width:100%;height:35%;.text{width:100%;bottom:0px;transform:translate(0%,30%);text-align:center;font-size:30px;}}"]);
 
 /***/ }),
 
@@ -195,7 +195,7 @@ const ButtonContainer = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a
 /*!*****************************!*\
   !*** ./components/index.js ***!
   \*****************************/
-/*! exports provided: CountButton */
+/*! exports provided: CountButton, Piechart */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -203,7 +203,70 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _countbutton__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./countbutton */ "./components/countbutton.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CountButton", function() { return _countbutton__WEBPACK_IMPORTED_MODULE_0__["default"]; });
 
+/* harmony import */ var _piechart__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./piechart */ "./components/piechart.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Piechart", function() { return _piechart__WEBPACK_IMPORTED_MODULE_1__["default"]; });
 
+
+
+
+/***/ }),
+
+/***/ "./components/piechart.js":
+/*!********************************!*\
+  !*** ./components/piechart.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "C:\\Users\\User\\Downloads\\250gaza\\basket\\components\\piechart.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0__["createElement"];
+
+
+
+const Index = props => {
+  return __jsx(PieChart, {
+    ratio: props.ratio,
+    mama: "111",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 6
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "pie",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "center",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8
+    },
+    __self: undefined
+  }), __jsx("div", {
+    className: "text",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: undefined
+  }, props.ratio)));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Index);
+const PieChart = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+  displayName: "piechart__PieChart",
+  componentId: "jqrpt1-0"
+})(["width:100px;height:100px;.pie{position:relative;display:inline-block;width:100%;height:100%;border-radius:50%;transition:0.3s;background:conic-gradient(#f1511f ", "%,#fff ", "% 100%);.center{background:#fff;position:absolute;top:50%;left:50%;width:80%;height:80%;border-radius:50%;transform:translate(-50%,-50%);}.text{position:absolute;top:50%;left:50%;border-radius:50%;transform:translate(-50%,-50%);}}"], props => props.ratio * 100, props => props.ratio * 100);
 
 /***/ }),
 
@@ -228,67 +291,96 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0__["createElement"];
 
 
 const Index = () => {
-  const [counts, setCounts] = react__WEBPACK_IMPORTED_MODULE_0__["useState"]([0, 0]);
+  const [counts, setCounts] = react__WEBPACK_IMPORTED_MODULE_0__["useState"]([[0, 0], [0, 0], [0, 0]]);
+  const [spot, setSpot] = react__WEBPACK_IMPORTED_MODULE_0__["useState"](0);
   react__WEBPACK_IMPORTED_MODULE_0__["useEffect"](() => {
     console.log(counts);
   }, [counts]);
+  react__WEBPACK_IMPORTED_MODULE_0__["useEffect"](() => {
+    console.log("spot:", spot);
+  }, [spot]);
 
-  const plusMade = () => {
-    setCounts([counts[0] + 1, counts[1]]);
+  const setCount = (spot, made, step) => {
+    var tempArr = counts.slice();
+    tempArr[spot][made] += step;
+    setCounts(tempArr);
   };
 
-  const minusMade = e => {
-    if (e.target.value === 0) {
-      console.log('0 미만은 입력할 수 없습니다.');
-      return;
-    }
-
-    setCounts([counts[0] - 1, counts[1]]);
+  const calcSpotRatio = spot => {
+    if (counts[spot][0] + counts[spot][1] === 0) return 0;else return (counts[spot][1] / (counts[spot][0] + counts[spot][1])).toFixed(2);
   };
 
-  const plusMiss = () => {
-    setCounts([counts[0], counts[1] + 1]);
-  };
-
-  const minusMiss = e => {
-    console.log(e.target.value);
-
-    if (e.target.value === 0) {
-      console.log('0 미만은 입력할 수 없습니다.');
-      return;
-    }
-
-    setCounts([counts[0], counts[1] - 1]);
+  const calcAllRatio = () => {
+    var shootNum = 0;
+    var madeNum = 0;
+    counts.map(count => {
+      shootNum += count[0] + count[1];
+      madeNum += count[1];
+    });
+    if (shootNum === 0) return 0;else return (madeNum / shootNum).toFixed(2);
   };
 
   return __jsx(Background, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
-    },
-    __self: undefined
-  }, __jsx(_components__WEBPACK_IMPORTED_MODULE_2__["CountButton"], {
-    plusOnClick: plusMade,
-    minusOnClick: e => minusMade(e),
-    value: counts[0],
-    onChange: e => {
-      setCounts([Number(e.target.value), counts[1]]);
-    },
-    __source: {
-      fileName: _jsxFileName,
       lineNumber: 35
     },
     __self: undefined
+  }, ["orange", "blue", "red"].map((spotColor, spot) => {
+    return __jsx("div", {
+      key: spot,
+      style: {
+        width: "100px",
+        height: "100px",
+        backgroundColor: spotColor
+      },
+      onClick: () => setSpot(spot),
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 38
+      },
+      __self: undefined
+    });
   }), __jsx(_components__WEBPACK_IMPORTED_MODULE_2__["CountButton"], {
-    plusOnClick: plusMiss,
-    minusOnClick: e => minusMiss(e),
-    value: counts[1],
+    plusOnClick: () => setCount(spot, 1, 1),
+    minusOnClick: () => setCount(spot, 1, -1),
+    value: counts[spot][1],
     onChange: e => {
-      setCounts([counts[0], Number(e.target.value)]);
+      var tempArr = counts.slice();
+      tempArr[spot][1] = Number(e.target.value);
+      setCounts(tempArr);
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 40
+    },
+    __self: undefined
+  }), __jsx(_components__WEBPACK_IMPORTED_MODULE_2__["CountButton"], {
+    plusOnClick: () => setCount(spot, 0, 1),
+    minusOnClick: () => setCount(spot, 0, -1),
+    value: counts[spot][0],
+    onChange: e => {
+      var tempArr = counts.slice();
+      tempArr[spot][0] = Number(e.target.value);
+      setCounts(tempArr);
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 45
+    },
+    __self: undefined
+  }), __jsx(_components__WEBPACK_IMPORTED_MODULE_2__["Piechart"], {
+    ratio: calcSpotRatio(spot),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 51
+    },
+    __self: undefined
+  }), __jsx(_components__WEBPACK_IMPORTED_MODULE_2__["Piechart"], {
+    ratio: calcAllRatio(),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 53
     },
     __self: undefined
   }));
@@ -302,7 +394,7 @@ const Background = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

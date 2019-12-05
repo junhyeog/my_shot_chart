@@ -39,7 +39,7 @@ const ButtonContainer = styled.div`
     .plusButton {
         position: absolute;
         top: 0px;
-        width: 100px;
+        width: 100%;
         height: 35%;
         border: 0px;
         .text {
@@ -63,7 +63,7 @@ const ButtonContainer = styled.div`
     .minusButton {
         position: absolute;
         bottom: 0px;
-        width: 100px;
+        width: 100%;
         height: 35%;
         .text {
             width: 100%;
