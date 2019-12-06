@@ -9,14 +9,30 @@ const Index = () => {
     const [spot, setSpot] = React.useState(0);
 
     React.useEffect(() => {
+        if (JSON.parse(localStorage.getItem('counts')))
+            setCounts(JSON.parse(localStorage.getItem('counts')));
+        console.log("pre-counts:", counts)
+        if (JSON.parse(localStorage.getItem('spot')))
+            setSpot(JSON.parse(localStorage.getItem('spot')));
+        console.log("pre-spot:", spot)
+    }, [])
+
+    React.useEffect(() => {
         console.log(counts)
     }, [counts])
     React.useEffect(() => {
         console.log("spot:", spot)
     }, [spot])
-
+    React.useEffect(() => {
+        localStorage.setItem('counts', JSON.stringify(counts))
+        localStorage.setItem('spot', JSON.stringify(spot))
+    })
     const setCount = (spot, made, step) => {
         var tempArr = counts.slice()
+        if (tempArr[spot][made] === 0 && step === -1) {
+            console.log("0 미만으로 입력하실 수 없습니다.")
+            return
+        }
         tempArr[spot][made] += step
         setCounts(tempArr)
     }

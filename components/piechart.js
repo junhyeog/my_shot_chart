@@ -23,7 +23,7 @@ const PieChart = styled.div`
         height: 100%;
         border-radius: 50%;
         transition: 0.3s;
-        background:conic-gradient(#f1511f ${props => props.ratio * 100}%, #fff ${props => props.ratio * 100}% 100%);
+        background:conic-gradient(#f1511f ${props => props.ratio * 100}%, #fff ${props => props.ratio * 100 + 2}% 100%);
         .center {
             background: #fff;
             position: absolute;

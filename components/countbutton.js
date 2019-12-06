@@ -22,7 +22,7 @@ const Index = (props) => {
     return (
         <ButtonContainer>
             <div className="plusButton" onClick={props.plusOnClick}><div className="text">+</div></div>
-            <input min="0" onKeyDown={(e) => filterNumber(e)} value={props.value} onChange={props.onChange}></input>
+            <input onKeyDown={(e) => filterNumber(e)} value={props.value} onChange={props.onChange}></input>
             <div className="minusButton" onClick={props.minusOnClick}><div className="text">-</div></div>
         </ButtonContainer>
     )

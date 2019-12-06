@@ -62,7 +62,6 @@ var Index = function Index(props) {
     },
     __self: this
   }, "+")), __jsx("input", {
-    min: "0",
     onKeyDown: function onKeyDown(e) {
       return filterNumber(e);
     },
@@ -176,7 +175,7 @@ var PieChart = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.wit
 })(["width:100px;height:100px;.pie{position:relative;display:inline-block;width:100%;height:100%;border-radius:50%;transition:0.3s;background:conic-gradient(#f1511f ", "%,#fff ", "% 100%);.center{background:#fff;position:absolute;top:50%;left:50%;width:80%;height:80%;border-radius:50%;transform:translate(-50%,-50%);}.text{position:absolute;top:50%;left:50%;border-radius:50%;transform:translate(-50%,-50%);}}"], function (props) {
   return props.ratio * 100;
 }, function (props) {
-  return props.ratio * 100;
+  return props.ratio * 100 + 2;
 });
 
 /***/ }),
@@ -211,6 +210,17 @@ module.exports = __webpack_require__(/*! core-js/library/fn/get-iterator */ "./n
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! core-js/library/fn/is-iterable */ "./node_modules/core-js/library/fn/is-iterable.js");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/json/stringify */ "./node_modules/core-js/library/fn/json/stringify.js");
 
 /***/ }),
 
@@ -470,6 +480,22 @@ module.exports = __webpack_require__(/*! ../modules/core.get-iterator */ "./node
 __webpack_require__(/*! ../modules/web.dom.iterable */ "./node_modules/core-js/library/modules/web.dom.iterable.js");
 __webpack_require__(/*! ../modules/es6.string.iterator */ "./node_modules/core-js/library/modules/es6.string.iterator.js");
 module.exports = __webpack_require__(/*! ../modules/core.is-iterable */ "./node_modules/core-js/library/modules/core.is-iterable.js");
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/library/fn/json/stringify.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/core-js/library/fn/json/stringify.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var core = __webpack_require__(/*! ../../modules/_core */ "./node_modules/core-js/library/modules/_core.js");
+var $JSON = core.JSON || (core.JSON = { stringify: JSON.stringify });
+module.exports = function stringify(it) { // eslint-disable-line no-unused-vars
+  return $JSON.stringify.apply($JSON, arguments);
+};
 
 
 /***/ }),
@@ -5872,38 +5898,57 @@ if ( true && typeof window !== 'undefined' && typeof navigator !== 'undefined' &
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/slicedToArray.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components */ "./components/index.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/json/stringify */ "./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/slicedToArray.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components */ "./components/index.js");
+
 
 var _jsxFileName = "C:\\Users\\User\\Downloads\\250gaza\\basket\\pages\\index.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_1__["createElement"];
+var __jsx = react__WEBPACK_IMPORTED_MODULE_2__["createElement"];
 
 
 
 
 var Index = function Index() {
-  var _React$useState = react__WEBPACK_IMPORTED_MODULE_1__["useState"]([[0, 0], [0, 0], [0, 0]]),
-      _React$useState2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_React$useState, 2),
+  var _React$useState = react__WEBPACK_IMPORTED_MODULE_2__["useState"]([[0, 0], [0, 0], [0, 0]]),
+      _React$useState2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_1__["default"])(_React$useState, 2),
       counts = _React$useState2[0],
       setCounts = _React$useState2[1];
 
-  var _React$useState3 = react__WEBPACK_IMPORTED_MODULE_1__["useState"](0),
-      _React$useState4 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_React$useState3, 2),
+  var _React$useState3 = react__WEBPACK_IMPORTED_MODULE_2__["useState"](0),
+      _React$useState4 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_1__["default"])(_React$useState3, 2),
       spot = _React$useState4[0],
       setSpot = _React$useState4[1];
 
-  react__WEBPACK_IMPORTED_MODULE_1__["useEffect"](function () {
+  react__WEBPACK_IMPORTED_MODULE_2__["useEffect"](function () {
+    if (JSON.parse(localStorage.getItem('counts'))) setCounts(JSON.parse(localStorage.getItem('counts')));
+    console.log("pre-counts:", counts);
+    if (JSON.parse(localStorage.getItem('spot'))) setSpot(JSON.parse(localStorage.getItem('spot')));
+    console.log("pre-spot:", spot);
+  }, []);
+  react__WEBPACK_IMPORTED_MODULE_2__["useEffect"](function () {
     console.log(counts);
   }, [counts]);
-  react__WEBPACK_IMPORTED_MODULE_1__["useEffect"](function () {
+  react__WEBPACK_IMPORTED_MODULE_2__["useEffect"](function () {
     console.log("spot:", spot);
   }, [spot]);
+  react__WEBPACK_IMPORTED_MODULE_2__["useEffect"](function () {
+    localStorage.setItem('counts', _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0___default()(counts));
+    localStorage.setItem('spot', _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0___default()(spot));
+  });
 
   var setCount = function setCount(spot, made, step) {
     var tempArr = counts.slice();
+
+    if (tempArr[spot][made] === 0 && step === -1) {
+      console.log("0 미만으로 입력하실 수 없습니다.");
+      return;
+    }
+
     tempArr[spot][made] += step;
     setCounts(tempArr);
   };
@@ -5925,7 +5970,7 @@ var Index = function Index() {
   return __jsx(Background, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 51
     },
     __self: this
   }, ["orange", "blue", "red"].map(function (spotColor, spot) {
@@ -5941,11 +5986,11 @@ var Index = function Index() {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 38
+        lineNumber: 54
       },
       __self: this
     });
-  }), __jsx(_components__WEBPACK_IMPORTED_MODULE_3__["CountButton"], {
+  }), __jsx(_components__WEBPACK_IMPORTED_MODULE_4__["CountButton"], {
     plusOnClick: function plusOnClick() {
       return setCount(spot, 1, 1);
     },
@@ -5960,10 +6005,10 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 56
     },
     __self: this
-  }), __jsx(_components__WEBPACK_IMPORTED_MODULE_3__["CountButton"], {
+  }), __jsx(_components__WEBPACK_IMPORTED_MODULE_4__["CountButton"], {
     plusOnClick: function plusOnClick() {
       return setCount(spot, 0, 1);
     },
@@ -5978,35 +6023,35 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 61
     },
     __self: this
-  }), __jsx(_components__WEBPACK_IMPORTED_MODULE_3__["Piechart"], {
+  }), __jsx(_components__WEBPACK_IMPORTED_MODULE_4__["Piechart"], {
     ratio: calcSpotRatio(spot),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51
+      lineNumber: 67
     },
     __self: this
-  }), __jsx(_components__WEBPACK_IMPORTED_MODULE_3__["Piechart"], {
+  }), __jsx(_components__WEBPACK_IMPORTED_MODULE_4__["Piechart"], {
     ratio: calcAllRatio(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 69
     },
     __self: this
   }));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Index);
-var Background = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
+var Background = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div.withConfig({
   displayName: "pages__Background",
   componentId: "sc-1n2syxe-0"
 })(["position:relative;display:flex;flex-direction:row;"]);
 
 /***/ }),
 
-/***/ 1:
+/***/ 0:
 /*!**************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5CUsers%5CUser%5CDownloads%5C250gaza%5Cbasket%5Cpages%5Cindex.js ***!
   \**************************************************************************************************************************************/
@@ -6029,5 +6074,5 @@ module.exports = dll_5f137288facb1107b491;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[0,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map
