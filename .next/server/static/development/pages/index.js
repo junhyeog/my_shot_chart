@@ -106,7 +106,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "C:\\Users\\User\\Downloads\\250gaza\\basket\\components\\countbutton.js";
+var _jsxFileName = "C:\\Users\\frogg\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\\uC6F9\uAC1C\uBC1C\uACF5\uBD80\\\uC815\uBCF4\uC801\uC0AC\uACE0\\basket\\components\\countbutton.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0__["createElement"];
 
 
@@ -223,7 +223,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "C:\\Users\\User\\Downloads\\250gaza\\basket\\components\\piechart.js";
+var _jsxFileName = "C:\\Users\\frogg\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\\uC6F9\uAC1C\uBC1C\uACF5\uBD80\\\uC815\uBCF4\uC801\uC0AC\uACE0\\basket\\components\\piechart.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0__["createElement"];
 
 
@@ -297,14 +297,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components */ "./components/index.js");
 
-var _jsxFileName = "C:\\Users\\User\\Downloads\\250gaza\\basket\\pages\\index.js";
+var _jsxFileName = "C:\\Users\\frogg\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\\uC6F9\uAC1C\uBC1C\uACF5\uBD80\\\uC815\uBCF4\uC801\uC0AC\uACE0\\basket\\pages\\index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1__["createElement"];
 
 
 
 
 const Index = () => {
-  const [counts, setCounts] = react__WEBPACK_IMPORTED_MODULE_1__["useState"]([[0, 0], [0, 0], [0, 0]]);
+  const [counts, setCounts] = react__WEBPACK_IMPORTED_MODULE_1__["useState"]([[0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0]]);
   const [spot, setSpot] = react__WEBPACK_IMPORTED_MODULE_1__["useState"](0);
   react__WEBPACK_IMPORTED_MODULE_1__["useEffect"](() => {
     if (JSON.parse(localStorage.getItem('counts'))) setCounts(JSON.parse(localStorage.getItem('counts')));
@@ -355,25 +355,480 @@ const Index = () => {
       lineNumber: 51
     },
     __self: undefined
-  }, ["orange", "blue", "red"].map((spotColor, spot) => {
-    return __jsx("div", {
-      key: spot,
-      style: {
-        width: "100px",
-        height: "100px",
-        backgroundColor: spotColor
-      },
-      onClick: () => setSpot(spot),
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 54
-      },
-      __self: undefined
-    });
-  }), __jsx(_components__WEBPACK_IMPORTED_MODULE_3__["CountButton"], {
+  }, __jsx("svg", {
+    height: 1000,
+    width: 1000,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 52
+    },
+    __self: undefined
+  }, __jsx("line", {
+    x1: "0",
+    x2: "50",
+    y1: "306",
+    y2: "306",
+    stroke: "#000000",
+    style: {
+      strokeDasharray: "6, 6",
+      strokeWidth: "1",
+      opacity: "0.1",
+      shapeRendering: "crispedges"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 53
+    },
+    __self: undefined
+  }), __jsx("line", {
+    x1: "846",
+    x2: "896",
+    y1: "306",
+    y2: "306",
+    stroke: "#000000",
+    style: {
+      strokeDasharray: "6, 6",
+      strokeWidth: "1",
+      opacity: "0.1",
+      shapeRendering: "crispedges"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 54
+    },
+    __self: undefined
+  }), __jsx("line", {
+    x1: "50",
+    x2: "306",
+    y1: "306",
+    y2: "306",
+    stroke: "#000000",
+    style: {
+      strokeDasharray: "6, 6",
+      strokeWidth: "1",
+      opacity: "0.1",
+      shapeRendering: "crispedges"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 55
+    },
+    __self: undefined
+  }), __jsx("line", {
+    x1: "594",
+    x2: "846",
+    y1: "306",
+    y2: "306",
+    stroke: "#000000",
+    style: {
+      strokeDasharray: "6, 6",
+      strokeWidth: "1",
+      opacity: "0.1",
+      shapeRendering: "crispedges"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 56
+    },
+    __self: undefined
+  }), __jsx("line", {
+    x1: "306",
+    x2: "306",
+    y1: "392",
+    y2: "545",
+    stroke: "#000000",
+    style: {
+      strokeDasharray: "6, 6",
+      strokeWidth: "1",
+      opacity: "0.1",
+      shapeRendering: "crispedges"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 57
+    },
+    __self: undefined
+  }), __jsx("line", {
+    x1: "594",
+    x2: "594",
+    y1: "392",
+    y2: "545",
+    stroke: "#000000",
+    style: {
+      strokeDasharray: "6, 6",
+      strokeWidth: "1",
+      opacity: "0.1",
+      shapeRendering: "crispedges"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 58
+    },
+    __self: undefined
+  }), __jsx("line", {
+    x1: "654",
+    x2: "714",
+    y1: "522",
+    y2: "664",
+    stroke: "#000000",
+    style: {
+      strokeDasharray: "6, 6",
+      strokeWidth: "1",
+      opacity: "0.1",
+      shapeRendering: "crispedges"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 59
+    },
+    __self: undefined
+  }), __jsx("line", {
+    x1: "246",
+    x2: "186",
+    y1: "522",
+    y2: "664",
+    stroke: "#000000",
+    style: {
+      strokeDasharray: "6, 6",
+      strokeWidth: "1",
+      opacity: "0.1",
+      shapeRendering: "crispedges"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 60
+    },
+    __self: undefined
+  }), __jsx("g", {
+    stroke: "#000000",
+    fill: "none",
+    style: {
+      strokeWidth: "1",
+      zIndex: "-1"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 62
+    },
+    __self: undefined
+  }, __jsx("line", {
+    x1: "306",
+    x2: "306",
+    y1: "50",
+    y2: "392",
+    style: {
+      shapeRendering: "crispedges"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 63
+    },
+    __self: undefined
+  }), __jsx("line", {
+    x1: "594",
+    x2: "594",
+    y1: "50",
+    y2: "392",
+    style: {
+      shapeRendering: "crispedges"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 64
+    },
+    __self: undefined
+  }), __jsx("line", {
+    x1: "306",
+    x2: "594",
+    y1: "392",
+    y2: "392",
+    style: {
+      shapeRendering: "crispedges"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 65
+    },
+    __self: undefined
+  }), __jsx("line", {
+    x1: "396",
+    x2: "504",
+    y1: "120.2",
+    y2: "120.2",
+    style: {
+      shapeRendering: "crispedges"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 66
+    },
+    __self: undefined
+  }), __jsx("line", {
+    x1: "378",
+    x2: "378",
+    y1: "125.6",
+    y2: "148.1",
+    style: {
+      shapeRendering: "crispedges"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 67
+    },
+    __self: undefined
+  }), __jsx("line", {
+    x1: "522",
+    x2: "522",
+    y1: "125.6",
+    y2: "148.1",
+    style: {
+      shapeRendering: "crispedges"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 68
+    },
+    __self: undefined
+  }), __jsx("line", {
+    x1: "54",
+    x2: "54",
+    y1: "50",
+    y2: "306",
+    style: {
+      shapeRendering: "crispedges"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 69
+    },
+    __self: undefined
+  }), __jsx("line", {
+    x1: "846",
+    x2: "846",
+    y1: "50",
+    y2: "306",
+    style: {
+      shapeRendering: "crispedges"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 70
+    },
+    __self: undefined
+  }), __jsx("path", {
+    d: "M54,305A427.5,427.5 1 0,0 846,305",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 71
+    },
+    __self: undefined
+  }), __jsx("path", {
+    d: "M342,392A108,108 1 0,1 558,392",
+    style: {
+      strokeDasharray: "22.5, 22.5"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 72
+    },
+    __self: undefined
+  }), __jsx("path", {
+    d: "M342,392A108,108 1 0,0 558,392",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 73
+    },
+    __self: undefined
+  }), __jsx("circle", {
+    cx: "450",
+    cy: "134.6",
+    r: "13.5",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 74
+    },
+    __self: undefined
+  }), __jsx("path", {
+    d: "M378,148.1A72,72 1 0,0 522,148.1",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 75
+    },
+    __self: undefined
+  }), __jsx("line", {
+    x1: "0",
+    x2: "900",
+    y1: "50",
+    y2: "50",
+    style: {
+      shapeRendering: "crispedges",
+      strokeWidth: "2"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 76
+    },
+    __self: undefined
+  })), __jsx("path", {
+    d: "M0,50L0,306L54,306L54,50L0,50",
+    fill: "red",
+    id: "zone",
+    key: 0,
+    onClick: () => setSpot(0),
+    style: {
+      pointerEvents: "visible",
+      opacity: "0.2"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 79
+    },
+    __self: undefined
+  }), __jsx("path", {
+    d: "M846,50L846,306L900,306L900,50L846,50",
+    fill: "none",
+    id: "zone",
+    key: 1,
+    onClick: () => setSpot(1),
+    style: {
+      pointerEvents: "visible"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 80
+    },
+    __self: undefined
+  }), __jsx("path", {
+    d: "M54,50L54,306L306,306L306,50L54,50",
+    fill: "none",
+    id: "zone",
+    key: 2,
+    onClick: () => setSpot(2),
+    style: {
+      pointerEvents: "visible"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 81
+    },
+    __self: undefined
+  }), __jsx("path", {
+    d: "M594,50L594,306L846,306L846,50L594,50",
+    fill: "none",
+    id: "zone",
+    key: 3,
+    onClick: () => setSpot(3),
+    style: {
+      pointerEvents: "visible"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 82
+    },
+    __self: undefined
+  }), __jsx("path", {
+    d: "M306,50L306,392L594,392L594,50L306,50",
+    fill: "none",
+    id: "zone",
+    key: 4,
+    onClick: () => setSpot(4),
+    style: {
+      pointerEvents: "visible"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 83
+    },
+    __self: undefined
+  }), __jsx("path", {
+    d: "M594,545L594,392L306,392L306,545A427.5,427.5 1 0,0 594,545",
+    fill: "none",
+    id: "zone",
+    key: 5,
+    onClick: () => setSpot(5),
+    style: {
+      pointerEvents: "visible"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 84
+    },
+    __self: undefined
+  }), __jsx("path", {
+    d: "M306,545L306,306L54,306A427.5,427.5 1 0,0 306,545",
+    fill: "none",
+    id: "zone",
+    key: 6,
+    onClick: () => setSpot(6),
+    style: {
+      pointerEvents: "visible"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 85
+    },
+    __self: undefined
+  }), __jsx("path", {
+    d: "M594,545L594,306L846,306A427.5,427.5 0 0,1 594,545",
+    fill: "none",
+    id: "zone",
+    key: 7,
+    onClick: () => setSpot(7),
+    style: {
+      pointerEvents: "visible"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 86
+    },
+    __self: undefined
+  }), __jsx("path", {
+    d: "M246,521L186,664L0,664L0,306L54,306A427.5,427.5 0 0,0 246,521",
+    fill: "none",
+    id: "zone",
+    key: 8,
+    onClick: () => setSpot(8),
+    style: {
+      pointerEvents: "visible"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 87
+    },
+    __self: undefined
+  }), __jsx("path", {
+    d: "M654,521L714,664L900,664L900,306L846,306A427.5,427.5 0 0,1 654,521",
+    fill: "green",
+    id: "zone",
+    key: 9,
+    onClick: () => setSpot(9),
+    style: {
+      pointerEvents: "visible",
+      opacity: "0.2"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 88
+    },
+    __self: undefined
+  }), __jsx("path", {
+    d: "M246,521L186,664L714,664L654,521A427.5,427.5 0 0,1 246,521",
+    fill: "none",
+    id: "zone",
+    key: 10,
+    onClick: () => setSpot(10),
+    style: {
+      pointerEvents: "visible"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 89
+    },
+    __self: undefined
+  })), __jsx(_components__WEBPACK_IMPORTED_MODULE_3__["CountButton"], {
     plusOnClick: () => setCount(spot, 1, 1),
     minusOnClick: () => setCount(spot, 1, -1),
-    value: counts[spot][1],
+    value: counts[spot] ? counts[spot][1] : 0,
     onChange: e => {
       var tempArr = counts.slice();
       tempArr[spot][1] = Number(e.target.value);
@@ -381,13 +836,13 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56
+      lineNumber: 91
     },
     __self: undefined
   }), __jsx(_components__WEBPACK_IMPORTED_MODULE_3__["CountButton"], {
     plusOnClick: () => setCount(spot, 0, 1),
     minusOnClick: () => setCount(spot, 0, -1),
-    value: counts[spot][0],
+    value: counts[spot] ? counts[spot][0] : 0,
     onChange: e => {
       var tempArr = counts.slice();
       tempArr[spot][0] = Number(e.target.value);
@@ -395,21 +850,21 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61
+      lineNumber: 96
     },
     __self: undefined
   }), __jsx(_components__WEBPACK_IMPORTED_MODULE_3__["Piechart"], {
     ratio: calcSpotRatio(spot),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67
+      lineNumber: 102
     },
     __self: undefined
   }), __jsx(_components__WEBPACK_IMPORTED_MODULE_3__["Piechart"], {
     ratio: calcAllRatio(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69
+      lineNumber: 104
     },
     __self: undefined
   }));
@@ -419,7 +874,7 @@ const Index = () => {
 const Background = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div.withConfig({
   displayName: "pages__Background",
   componentId: "sc-1n2syxe-0"
-})(["position:relative;display:flex;flex-direction:row;"]);
+})(["position:relative;display:flex;flex-direction:row;path{z-index:1;}"]);
 
 /***/ }),
 
@@ -430,7 +885,7 @@ const Background = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div.
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\User\Downloads\250gaza\basket\pages\index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! C:\Users\frogg\OneDrive\바탕 화면\웹개발공부\정보적사고\basket\pages\index.js */"./pages/index.js");
 
 
 /***/ }),
