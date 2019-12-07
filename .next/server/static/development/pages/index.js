@@ -304,19 +304,22 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1__["createElement"];
 
 
 const Index = () => {
-  const [counts, setCounts] = react__WEBPACK_IMPORTED_MODULE_1__["useState"]([[0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0]]);
+  const [counts, setCounts] = react__WEBPACK_IMPORTED_MODULE_1__["useState"]([[0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0]]); //local storage에 남아있는 데이터 확인
+
   const [spot, setSpot] = react__WEBPACK_IMPORTED_MODULE_1__["useState"](0);
+  const spotName = ["왼쪽 코너", "오른쪽 코너", "왼쪽 쇼트 코너", "오른쪽 쇼트 코너", "페인트존", "키", "왼쪽 엘보", "오른쪽 엘보", "왼쪽 윙", "오른쪽 윙", "탑"];
   react__WEBPACK_IMPORTED_MODULE_1__["useEffect"](() => {
     if (JSON.parse(localStorage.getItem('counts'))) setCounts(JSON.parse(localStorage.getItem('counts')));
     console.log("pre-counts:", counts);
     if (JSON.parse(localStorage.getItem('spot'))) setSpot(JSON.parse(localStorage.getItem('spot')));
     console.log("pre-spot:", spot);
-  }, []);
+  }, []); //local storage에 남아있는 데이터 확인하기
+
   react__WEBPACK_IMPORTED_MODULE_1__["useEffect"](() => {
     console.log(counts);
   }, [counts]);
   react__WEBPACK_IMPORTED_MODULE_1__["useEffect"](() => {
-    console.log("spot:", spot);
+    console.log("spot:", spotName[spot]);
   }, [spot]);
   react__WEBPACK_IMPORTED_MODULE_1__["useEffect"](() => {
     localStorage.setItem('counts', _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0___default()(counts));
@@ -352,7 +355,7 @@ const Index = () => {
   return __jsx(Background, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51
+      lineNumber: 53
     },
     __self: undefined
   }, __jsx("svg", {
@@ -360,7 +363,7 @@ const Index = () => {
     width: 1000,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52
+      lineNumber: 54
     },
     __self: undefined
   }, __jsx("line", {
@@ -377,7 +380,7 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 55
     },
     __self: undefined
   }), __jsx("line", {
@@ -394,7 +397,7 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 56
     },
     __self: undefined
   }), __jsx("line", {
@@ -411,7 +414,7 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55
+      lineNumber: 57
     },
     __self: undefined
   }), __jsx("line", {
@@ -428,7 +431,7 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56
+      lineNumber: 58
     },
     __self: undefined
   }), __jsx("line", {
@@ -445,7 +448,7 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57
+      lineNumber: 59
     },
     __self: undefined
   }), __jsx("line", {
@@ -462,7 +465,7 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58
+      lineNumber: 60
     },
     __self: undefined
   }), __jsx("line", {
@@ -479,7 +482,7 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59
+      lineNumber: 61
     },
     __self: undefined
   }), __jsx("line", {
@@ -496,7 +499,7 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
+      lineNumber: 62
     },
     __self: undefined
   }), __jsx("g", {
@@ -508,7 +511,7 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62
+      lineNumber: 64
     },
     __self: undefined
   }, __jsx("line", {
@@ -521,7 +524,7 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63
+      lineNumber: 65
     },
     __self: undefined
   }), __jsx("line", {
@@ -534,7 +537,7 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64
+      lineNumber: 66
     },
     __self: undefined
   }), __jsx("line", {
@@ -547,7 +550,7 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65
+      lineNumber: 67
     },
     __self: undefined
   }), __jsx("line", {
@@ -560,7 +563,7 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66
+      lineNumber: 68
     },
     __self: undefined
   }), __jsx("line", {
@@ -573,7 +576,7 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67
+      lineNumber: 69
     },
     __self: undefined
   }), __jsx("line", {
@@ -586,7 +589,7 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68
+      lineNumber: 70
     },
     __self: undefined
   }), __jsx("line", {
@@ -599,7 +602,7 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69
+      lineNumber: 71
     },
     __self: undefined
   }), __jsx("line", {
@@ -612,14 +615,14 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70
+      lineNumber: 72
     },
     __self: undefined
   }), __jsx("path", {
     d: "M54,305A427.5,427.5 1 0,0 846,305",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71
+      lineNumber: 73
     },
     __self: undefined
   }), __jsx("path", {
@@ -629,14 +632,14 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72
+      lineNumber: 74
     },
     __self: undefined
   }), __jsx("path", {
     d: "M342,392A108,108 1 0,0 558,392",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73
+      lineNumber: 75
     },
     __self: undefined
   }), __jsx("circle", {
@@ -645,14 +648,14 @@ const Index = () => {
     r: "13.5",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74
+      lineNumber: 76
     },
     __self: undefined
   }), __jsx("path", {
     d: "M378,148.1A72,72 1 0,0 522,148.1",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75
+      lineNumber: 77
     },
     __self: undefined
   }), __jsx("line", {
@@ -666,7 +669,7 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76
+      lineNumber: 78
     },
     __self: undefined
   })), __jsx("path", {
@@ -681,7 +684,7 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79
+      lineNumber: 81
     },
     __self: undefined
   }), __jsx("path", {
@@ -695,7 +698,7 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80
+      lineNumber: 82
     },
     __self: undefined
   }), __jsx("path", {
@@ -709,7 +712,7 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81
+      lineNumber: 83
     },
     __self: undefined
   }), __jsx("path", {
@@ -723,7 +726,7 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82
+      lineNumber: 84
     },
     __self: undefined
   }), __jsx("path", {
@@ -737,7 +740,7 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 83
+      lineNumber: 85
     },
     __self: undefined
   }), __jsx("path", {
@@ -751,7 +754,7 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 84
+      lineNumber: 86
     },
     __self: undefined
   }), __jsx("path", {
@@ -765,7 +768,7 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85
+      lineNumber: 87
     },
     __self: undefined
   }), __jsx("path", {
@@ -779,7 +782,7 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86
+      lineNumber: 88
     },
     __self: undefined
   }), __jsx("path", {
@@ -793,7 +796,7 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87
+      lineNumber: 89
     },
     __self: undefined
   }), __jsx("path", {
@@ -808,7 +811,7 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88
+      lineNumber: 90
     },
     __self: undefined
   }), __jsx("path", {
@@ -822,10 +825,17 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89
+      lineNumber: 91
     },
     __self: undefined
-  })), __jsx(_components__WEBPACK_IMPORTED_MODULE_3__["CountButton"], {
+  })), __jsx("div", {
+    className: "spotname",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 93
+    },
+    __self: undefined
+  }, spotName[spot]), __jsx(_components__WEBPACK_IMPORTED_MODULE_3__["CountButton"], {
     plusOnClick: () => setCount(spot, 1, 1),
     minusOnClick: () => setCount(spot, 1, -1),
     value: counts[spot] ? counts[spot][1] : 0,
@@ -836,7 +846,7 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91
+      lineNumber: 94
     },
     __self: undefined
   }), __jsx(_components__WEBPACK_IMPORTED_MODULE_3__["CountButton"], {
@@ -850,21 +860,21 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96
+      lineNumber: 99
     },
     __self: undefined
   }), __jsx(_components__WEBPACK_IMPORTED_MODULE_3__["Piechart"], {
     ratio: calcSpotRatio(spot),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102
+      lineNumber: 105
     },
     __self: undefined
   }), __jsx(_components__WEBPACK_IMPORTED_MODULE_3__["Piechart"], {
     ratio: calcAllRatio(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 104
+      lineNumber: 107
     },
     __self: undefined
   }));
@@ -874,7 +884,7 @@ const Index = () => {
 const Background = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div.withConfig({
   displayName: "pages__Background",
   componentId: "sc-1n2syxe-0"
-})(["position:relative;display:flex;flex-direction:row;path{z-index:1;}"]);
+})(["position:relative;display:flex;flex-direction:row;path{z-index:1;}.spotname{position:absolute;top:500px;left:1000px;}"]);
 
 /***/ }),
 

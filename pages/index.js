@@ -8,7 +8,7 @@ const Index = () => {
     const [counts, setCounts] = React.useState([[0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0]]);
     //local storage에 남아있는 데이터 확인
     const [spot, setSpot] = React.useState(0);
-
+    const spotName=["왼쪽 코너","오른쪽 코너","왼쪽 쇼트 코너","오른쪽 쇼트 코너","페인트존","키","왼쪽 엘보","오른쪽 엘보","왼쪽 윙","오른쪽 윙","탑"];
     React.useEffect(() => {
         if (JSON.parse(localStorage.getItem('counts')))
             setCounts(JSON.parse(localStorage.getItem('counts')));
@@ -23,7 +23,7 @@ const Index = () => {
         console.log(counts)
     }, [counts])
     React.useEffect(() => {
-        console.log("spot:", spot)
+        console.log("spot:", spotName[spot])
     }, [spot])
     React.useEffect(() => {
         localStorage.setItem('counts', JSON.stringify(counts))
@@ -90,6 +90,7 @@ const Index = () => {
                 <path d="M654,521L714,664L900,664L900,306L846,306A427.5,427.5 0 0,1 654,521" fill="green" id="zone" key={9} onClick={() => setSpot(9)} style={{pointerEvents:"visible", opacity:"0.2"}}></path>
                 <path d="M246,521L186,664L714,664L654,521A427.5,427.5 0 0,1 246,521" fill="none" id="zone" key={10} onClick={() => setSpot(10)} style={{pointerEvents:"visible"}}></path>
             </svg>
+            <div className="spotname">{spotName[spot]}</div>
             <CountButton plusOnClick={() => setCount(spot, 1, 1)} minusOnClick={() => setCount(spot, 1, -1)} value={counts[spot]?counts[spot][1]:0} onChange={(e) => {
                 var tempArr = counts.slice()
                 tempArr[spot][1] = Number(e.target.value)
@@ -117,6 +118,10 @@ const Background = styled.div`
     flex-direction: row;
     path{
         z-index:1;
+    }
+    .spotname{
+        position:absolute;
+        top: 500px; left:1000px;
     }
 `
 
