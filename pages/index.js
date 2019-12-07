@@ -49,15 +49,29 @@ const Index = () => {
         if (shootNum === 0) return 0
         else return (madeNum / shootNum).toFixed(2)
     }
+    
+    const perc2color=(perc)=> {
+        var r, g, b = 0;
+        if(perc < 50) {
+            r = 255;
+            g = Math.round(5.1 * perc);
+        }
+        else {
+            g = 255;
+            r = Math.round(510 - 5.10 * perc);
+        }
+        var h = r * 0x10000 + g * 0x100 + b * 0x1;
+        return '#' + ('000000' + h.toString(16)).slice(-6);
+    }
     const Path = styled.path`
         z-index:1;
-        opacity: 0.2;
         pointer-events: visible;
-        fill: ${props => props.keys === spot ? "green" : "none"};
+        opacity: ${props => props.keys === spot ? 0.3 : 0.2 };
+        fill: ${props => perc2color(Number(calcSpotRatio(props.keys))*100)};
     `
     return (
         <Background>
-            <svg height={1000} width={1000}>
+            <svg height={667} width={1000} viewBox="-20 17 940 667">
                 <line x1="0" x2="50" y1="306" y2="306" stroke="#000000" style={{ strokeDasharray: "6, 6", strokeWidth: "1", opacity: "0.1", shapeRendering: "crispedges" }}></line>
                 <line x1="846" x2="896" y1="306" y2="306" stroke="#000000" style={{ strokeDasharray: "6, 6", strokeWidth: "1", opacity: "0.1", shapeRendering: "crispedges" }}></line>
                 <line x1="50" x2="306" y1="306" y2="306" stroke="#000000" style={{ strokeDasharray: "6, 6", strokeWidth: "1", opacity: "0.1", shapeRendering: "crispedges" }}></line>
@@ -84,7 +98,7 @@ const Index = () => {
                     <line x1="0" x2="900" y1="50" y2="50" style={{ shapeRendering: "crispedges", strokeWidth: "2" }}></line>
                 </g>
                 {/*클릭할 영역*/}
-                <Path d="M0,50L0,306L54,306L54,50L0,50" fill="red" id="zone" keys={0} onClick={() => setSpot(0)} />
+                <Path d="M0,50L0,306L54,306L54,50L0,50" fill="none" id="zone" keys={0} onClick={() => setSpot(0)} />
                 <Path d="M846,50L846,306L900,306L900,50L846,50" fill="none" id="zone" keys={1} onClick={() => setSpot(1)} />
                 <Path d="M54,50L54,306L306,306L306,50L54,50" fill="none" id="zone" keys={2} onClick={() => setSpot(2)} />
                 <Path d="M594,50L594,306L846,306L846,50L594,50" fill="none" id="zone" keys={3} onClick={() => setSpot(3)} />
@@ -93,7 +107,7 @@ const Index = () => {
                 <Path d="M306,545L306,306L54,306A427.5,427.5 1 0,0 306,545" fill="none" id="zone" keys={6} onClick={() => setSpot(6)} />
                 <Path d="M594,545L594,306L846,306A427.5,427.5 0 0,1 594,545" fill="none" id="zone" keys={7} onClick={() => setSpot(7)} />
                 <Path d="M246,521L186,664L0,664L0,306L54,306A427.5,427.5 0 0,0 246,521" fill="none" id="zone" keys={8} onClick={() => setSpot(8)} />
-                <Path d="M654,521L714,664L900,664L900,306L846,306A427.5,427.5 0 0,1 654,521" fill="green" id="zone" keys={9} onClick={() => setSpot(9)} />
+                <Path d="M654,521L714,664L900,664L900,306L846,306A427.5,427.5 0 0,1 654,521" fill="none" id="zone" keys={9} onClick={() => setSpot(9)} />
                 <Path d="M246,521L186,664L714,664L654,521A427.5,427.5 0 0,1 246,521" fill="none" id="zone" keys={10} onClick={() => setSpot(10)} />
             </svg>
             <div className="spotname">{spotName[spot]}</div>
@@ -122,6 +136,9 @@ const Background = styled.div`
     position: relative;
     display: flex;
     flex-direction: row;
+    svg{
+        max-width:1000px;
+    }
     .spotname{
         position:absolute;
         top: 500px; left:1000px;
