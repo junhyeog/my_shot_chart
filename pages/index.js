@@ -49,10 +49,9 @@ const Index = () => {
         if (shootNum === 0) return 0
         else return (madeNum / shootNum).toFixed(2)
     }
-    
-    const perc2color=(perc)=> {
+    const perc2color = (perc) => {
         var r, g, b = 0;
-        if(perc < 50) {
+        if (perc < 50) {
             r = 255;
             g = Math.round(5.1 * perc);
         }
@@ -66,12 +65,12 @@ const Index = () => {
     const Path = styled.path`
         z-index:1;
         pointer-events: visible;
-        opacity: ${props => props.keys === spot ? 0.3 : 0.2 };
-        fill: ${props => perc2color(Number(calcSpotRatio(props.keys))*100)};
+        opacity: ${props => props.keys === spot ? 0.3 : 0.2};
+        fill: ${props => perc2color(Number(calcSpotRatio(props.keys)) * 100)};
     `
     return (
         <Background>
-            <svg height={667} width={1000} viewBox="-20 17 940 667">
+            <svg viewBox="-20 17 940 667">
                 <line x1="0" x2="50" y1="306" y2="306" stroke="#000000" style={{ strokeDasharray: "6, 6", strokeWidth: "1", opacity: "0.1", shapeRendering: "crispedges" }}></line>
                 <line x1="846" x2="896" y1="306" y2="306" stroke="#000000" style={{ strokeDasharray: "6, 6", strokeWidth: "1", opacity: "0.1", shapeRendering: "crispedges" }}></line>
                 <line x1="50" x2="306" y1="306" y2="306" stroke="#000000" style={{ strokeDasharray: "6, 6", strokeWidth: "1", opacity: "0.1", shapeRendering: "crispedges" }}></line>
@@ -111,37 +110,59 @@ const Index = () => {
                 <Path d="M246,521L186,664L714,664L654,521A427.5,427.5 0 0,1 246,521" fill="none" id="zone" keys={10} onClick={() => setSpot(10)} />
             </svg>
             <div className="spotname">{spotName[spot]}</div>
-            <CountButton plusOnClick={() => setCount(spot, 1, 1)} minusOnClick={() => setCount(spot, 1, -1)} value={counts[spot] ? counts[spot][1] : 0} onChange={(e) => {
-                var tempArr = counts.slice()
-                tempArr[spot][1] = Number(e.target.value)
-                setCounts(tempArr)
-            }} />
-            <CountButton plusOnClick={() => setCount(spot, 0, 1)} minusOnClick={() => setCount(spot, 0, -1)} value={counts[spot] ? counts[spot][0] : 0} onChange={(e) => {
-                var tempArr = counts.slice()
-                tempArr[spot][0] = Number(e.target.value)
-                setCounts(tempArr)
-            }} />
-            {/* 각 spot에서의 성공률 */}
-            <Piechart ratio={calcSpotRatio(spot)} />
-            {/* 총 성공률 */}
-            <Piechart ratio={calcAllRatio()} />
+            <div className="chartsContainer">
+                {/* 각 spot에서의 성공률 */}
+                <Piechart ratio={calcSpotRatio(spot)} barColor={perc2color(Number(calcSpotRatio(spot)) * 100)} />
+                {/* 총 성공률 */}
+                <Piechart ratio={calcAllRatio()} barColor={perc2color(Number(calcAllRatio()) * 100)} />
+            </div>
+            <div className="countButtonsContainer">
+                <CountButton plusOnClick={() => setCount(spot, 1, 1)} minusOnClick={() => setCount(spot, 1, -1)} value={counts[spot] ? counts[spot][1] : 0} onChange={(e) => {
+                    var tempArr = counts.slice()
+                    tempArr[spot][1] = Number(e.target.value)
+                    setCounts(tempArr)
+                }} />
+                <CountButton plusOnClick={() => setCount(spot, 0, 1)} minusOnClick={() => setCount(spot, 0, -1)} value={counts[spot] ? counts[spot][0] : 0} onChange={(e) => {
+                    var tempArr = counts.slice()
+                    tempArr[spot][0] = Number(e.target.value)
+                    setCounts(tempArr)
+                }} />
+            </div>
         </Background>
     )
 }
 export default Index
 
 
-
 const Background = styled.div`
     position: relative;
-    display: flex;
-    flex-direction: row;
-    svg{
+    width: 100vw;
+    height: 100vh;
+    svg {
         max-width:1000px;
+        position: relative;
+        top: 0px;
+        width: 100%;
+        height: 33%;
     }
-    .spotname{
-        position:absolute;
-        top: 500px; left:1000px;
+    .spotname {
+        position: relative;
+        text-align: center;
+    }
+    .countButtonsContainer {
+        position: relative;
+        width: calc(100% - 40px);
+        height: 20%;
+        display: flex;
+        margin: 20px;
+        margin-top: 40px;
+    }
+    .chartsContainer {
+        position: relative;
+        width: calc(100% - 40px);
+        height: 100px;
+        display: flex;
+        margin: 20px;
     }
 `
 

@@ -8,7 +8,7 @@ const Layout = ({ Component }) => {
   return (
     <Container>
       <Head>
-        <title>Shoot Chart</title>
+        <title>Shot Chart</title>
       </Head>
       <Component />
       <GlobalStyle />

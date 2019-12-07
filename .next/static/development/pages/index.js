@@ -94,7 +94,7 @@ var Index = function Index(props) {
 var ButtonContainer = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "countbutton__ButtonContainer",
   componentId: "sc-1wih92-0"
-})(["position:relative;width:100px;height:200px;border-radius:20px;border:1px solid black;cursor:pointer;.plusButton{position:absolute;top:0px;width:100%;height:35%;border:0px;.text{width:100%;transform:translate(0%,30%);text-align:center;font-size:30px;}}input{position:absolute;top:35%;width:100%;height:30%;border:0px;text-align:center;font-size:30px;outline:none;cursor:text;}.minusButton{position:absolute;bottom:0px;width:100%;height:35%;.text{width:100%;bottom:0px;transform:translate(0%,30%);text-align:center;font-size:30px;}}"]);
+})(["position:relative;width:30%;margin:0% 10%;height:100%;border-radius:20px;border:1px solid black;cursor:pointer;.plusButton{position:absolute;top:0px;width:100%;height:35%;border:0px;.text{width:100%;transform:translate(0%,30%);text-align:center;font-size:30px;}}input{position:absolute;top:35%;width:100%;height:30%;border:0px;text-align:center;font-size:30px;outline:none;cursor:text;}.minusButton{position:absolute;bottom:0px;width:100%;height:35%;.text{width:100%;bottom:0px;transform:translate(0%,30%);text-align:center;font-size:30px;}}"]);
 
 /***/ }),
 
@@ -137,8 +137,8 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0__["createElement"];
 
 var Index = function Index(props) {
   return __jsx(PieChart, {
+    barColor: props.barColor,
     ratio: props.ratio,
-    mama: "111",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 6
@@ -172,7 +172,9 @@ var Index = function Index(props) {
 var PieChart = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "piechart__PieChart",
   componentId: "jqrpt1-0"
-})(["width:100px;height:100px;.pie{position:relative;display:inline-block;width:100%;height:100%;border-radius:50%;transition:0.3s;background:conic-gradient(#f1511f ", "%,#fff ", "% 100%);.center{background:#fff;position:absolute;top:50%;left:50%;width:80%;height:80%;border-radius:50%;transform:translate(-50%,-50%);}.text{position:absolute;top:50%;left:50%;border-radius:50%;transform:translate(-50%,-50%);}}"], function (props) {
+})(["position:relative;width:100px;height:100px;margin:0% calc(25% - 50px);.pie{position:relative;display:inline-block;width:100%;height:100%;border-radius:50%;transition:0.3s;background:conic-gradient(", " ", "%,#fff ", "% 100%);.center{background:#fff;position:absolute;top:50%;left:50%;width:80%;height:80%;border-radius:50%;transform:translate(-50%,-50%);}.text{position:absolute;top:50%;left:50%;border-radius:50%;transform:translate(-50%,-50%);}}"], function (props) {
+  return props.barColor;
+}, function (props) {
   return props.ratio * 100;
 }, function (props) {
   return props.ratio * 100 + 2;
@@ -5970,24 +5972,42 @@ var Index = function Index() {
     if (shootNum === 0) return 0;else return (madeNum / shootNum).toFixed(2);
   };
 
+  var perc2color = function perc2color(perc) {
+    var r,
+        g,
+        b = 0;
+
+    if (perc < 50) {
+      r = 255;
+      g = Math.round(5.1 * perc);
+    } else {
+      g = 255;
+      r = Math.round(510 - 5.10 * perc);
+    }
+
+    var h = r * 0x10000 + g * 0x100 + b * 0x1;
+    return '#' + ('000000' + h.toString(16)).slice(-6);
+  };
+
   var Path = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].path.withConfig({
     displayName: "pages__Path",
     componentId: "sc-1n2syxe-0"
-  })(["z-index:1;opacity:0.2;pointer-events:visible;fill:", ";"], function (props) {
-    return props.keys === spot ? "green" : "none";
+  })(["z-index:1;pointer-events:visible;opacity:", ";fill:", ";"], function (props) {
+    return props.keys === spot ? 0.3 : 0.2;
+  }, function (props) {
+    return perc2color(Number(calcSpotRatio(props.keys)) * 100);
   });
   return __jsx(Background, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59
+      lineNumber: 72
     },
     __self: this
   }, __jsx("svg", {
-    height: 1000,
-    width: 1000,
+    viewBox: "-20 17 940 667",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
+      lineNumber: 73
     },
     __self: this
   }, __jsx("line", {
@@ -6004,7 +6024,7 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61
+      lineNumber: 74
     },
     __self: this
   }), __jsx("line", {
@@ -6021,7 +6041,7 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62
+      lineNumber: 75
     },
     __self: this
   }), __jsx("line", {
@@ -6038,7 +6058,7 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63
+      lineNumber: 76
     },
     __self: this
   }), __jsx("line", {
@@ -6055,7 +6075,7 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64
+      lineNumber: 77
     },
     __self: this
   }), __jsx("line", {
@@ -6072,7 +6092,7 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65
+      lineNumber: 78
     },
     __self: this
   }), __jsx("line", {
@@ -6089,7 +6109,7 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66
+      lineNumber: 79
     },
     __self: this
   }), __jsx("line", {
@@ -6106,7 +6126,7 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67
+      lineNumber: 80
     },
     __self: this
   }), __jsx("line", {
@@ -6123,7 +6143,7 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68
+      lineNumber: 81
     },
     __self: this
   }), __jsx("g", {
@@ -6135,7 +6155,7 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70
+      lineNumber: 83
     },
     __self: this
   }, __jsx("line", {
@@ -6148,7 +6168,7 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71
+      lineNumber: 84
     },
     __self: this
   }), __jsx("line", {
@@ -6161,7 +6181,7 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72
+      lineNumber: 85
     },
     __self: this
   }), __jsx("line", {
@@ -6174,7 +6194,7 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73
+      lineNumber: 86
     },
     __self: this
   }), __jsx("line", {
@@ -6187,7 +6207,7 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74
+      lineNumber: 87
     },
     __self: this
   }), __jsx("line", {
@@ -6200,7 +6220,7 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75
+      lineNumber: 88
     },
     __self: this
   }), __jsx("line", {
@@ -6213,7 +6233,7 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76
+      lineNumber: 89
     },
     __self: this
   }), __jsx("line", {
@@ -6226,7 +6246,7 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77
+      lineNumber: 90
     },
     __self: this
   }), __jsx("line", {
@@ -6239,14 +6259,14 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78
+      lineNumber: 91
     },
     __self: this
   }), __jsx("path", {
     d: "M54,305A427.5,427.5 1 0,0 846,305",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79
+      lineNumber: 92
     },
     __self: this
   }), __jsx("path", {
@@ -6256,14 +6276,14 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80
+      lineNumber: 93
     },
     __self: this
   }), __jsx("path", {
     d: "M342,392A108,108 1 0,0 558,392",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81
+      lineNumber: 94
     },
     __self: this
   }), __jsx("circle", {
@@ -6272,14 +6292,14 @@ var Index = function Index() {
     r: "13.5",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82
+      lineNumber: 95
     },
     __self: this
   }), __jsx("path", {
     d: "M378,148.1A72,72 1 0,0 522,148.1",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 83
+      lineNumber: 96
     },
     __self: this
   }), __jsx("line", {
@@ -6293,12 +6313,12 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 84
+      lineNumber: 97
     },
     __self: this
   })), __jsx(Path, {
     d: "M0,50L0,306L54,306L54,50L0,50",
-    fill: "red",
+    fill: "none",
     id: "zone",
     keys: 0,
     onClick: function onClick() {
@@ -6306,7 +6326,7 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87
+      lineNumber: 100
     },
     __self: this
   }), __jsx(Path, {
@@ -6319,7 +6339,7 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88
+      lineNumber: 101
     },
     __self: this
   }), __jsx(Path, {
@@ -6332,7 +6352,7 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89
+      lineNumber: 102
     },
     __self: this
   }), __jsx(Path, {
@@ -6345,7 +6365,7 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 90
+      lineNumber: 103
     },
     __self: this
   }), __jsx(Path, {
@@ -6358,7 +6378,7 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91
+      lineNumber: 104
     },
     __self: this
   }), __jsx(Path, {
@@ -6371,7 +6391,7 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 92
+      lineNumber: 105
     },
     __self: this
   }), __jsx(Path, {
@@ -6384,7 +6404,7 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 93
+      lineNumber: 106
     },
     __self: this
   }), __jsx(Path, {
@@ -6397,7 +6417,7 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94
+      lineNumber: 107
     },
     __self: this
   }), __jsx(Path, {
@@ -6410,12 +6430,12 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95
+      lineNumber: 108
     },
     __self: this
   }), __jsx(Path, {
     d: "M654,521L714,664L900,664L900,306L846,306A427.5,427.5 0 0,1 654,521",
-    fill: "green",
+    fill: "none",
     id: "zone",
     keys: 9,
     onClick: function onClick() {
@@ -6423,7 +6443,7 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96
+      lineNumber: 109
     },
     __self: this
   }), __jsx(Path, {
@@ -6436,17 +6456,47 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 97
+      lineNumber: 110
     },
     __self: this
   })), __jsx("div", {
     className: "spotname",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99
+      lineNumber: 112
     },
     __self: this
-  }, spotName[spot]), __jsx(_components__WEBPACK_IMPORTED_MODULE_4__["CountButton"], {
+  }, spotName[spot]), __jsx("div", {
+    className: "chartsContainer",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 113
+    },
+    __self: this
+  }, __jsx(_components__WEBPACK_IMPORTED_MODULE_4__["Piechart"], {
+    ratio: calcSpotRatio(spot),
+    barColor: perc2color(Number(calcSpotRatio(spot)) * 100),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 115
+    },
+    __self: this
+  }), __jsx(_components__WEBPACK_IMPORTED_MODULE_4__["Piechart"], {
+    ratio: calcAllRatio(),
+    barColor: perc2color(Number(calcAllRatio()) * 100),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 117
+    },
+    __self: this
+  })), __jsx("div", {
+    className: "countButtonsContainer",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 119
+    },
+    __self: this
+  }, __jsx(_components__WEBPACK_IMPORTED_MODULE_4__["CountButton"], {
     plusOnClick: function plusOnClick() {
       return setCount(spot, 1, 1);
     },
@@ -6461,7 +6511,7 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100
+      lineNumber: 120
     },
     __self: this
   }), __jsx(_components__WEBPACK_IMPORTED_MODULE_4__["CountButton"], {
@@ -6479,31 +6529,17 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 105
+      lineNumber: 125
     },
     __self: this
-  }), __jsx(_components__WEBPACK_IMPORTED_MODULE_4__["Piechart"], {
-    ratio: calcSpotRatio(spot),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 111
-    },
-    __self: this
-  }), __jsx(_components__WEBPACK_IMPORTED_MODULE_4__["Piechart"], {
-    ratio: calcAllRatio(),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 113
-    },
-    __self: this
-  }));
+  })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Index);
 var Background = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div.withConfig({
   displayName: "pages__Background",
   componentId: "sc-1n2syxe-1"
-})(["position:relative;display:flex;flex-direction:row;.spotname{position:absolute;top:500px;left:1000px;}"]);
+})(["position:relative;width:100vw;height:100vh;svg{max-width:1000px;position:relative;top:0px;width:100%;height:33%;}.spotname{position:relative;text-align:center;}.countButtonsContainer{position:relative;width:calc(100% - 40px);height:20%;display:flex;margin:20px;margin-top:40px;}.chartsContainer{position:relative;width:calc(100% - 40px);height:100px;display:flex;margin:20px;}"]);
 
 /***/ }),
 

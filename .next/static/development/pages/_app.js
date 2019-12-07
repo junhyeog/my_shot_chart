@@ -11599,7 +11599,7 @@ var Layout = function Layout(_ref) {
       lineNumber: 11
     },
     __self: this
-  }, "Shoot Chart")), __jsx(Component, {
+  }, "Shot Chart")), __jsx(Component, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 13

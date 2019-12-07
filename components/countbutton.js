@@ -31,8 +31,9 @@ export default Index
 
 const ButtonContainer = styled.div`
     position: relative;
-    width: 100px;
-    height: 200px;
+    width: 30%;
+    margin: 0% 10%;
+    height: 100%;
     border-radius: 20px;
     border:  1px solid black;
     cursor: pointer;

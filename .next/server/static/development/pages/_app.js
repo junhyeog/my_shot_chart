@@ -572,7 +572,7 @@ const Layout = ({
       lineNumber: 11
     },
     __self: undefined
-  }, "Shoot Chart")), __jsx(Component, {
+  }, "Shot Chart")), __jsx(Component, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 13
