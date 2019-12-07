@@ -12,7 +12,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-var _jsxFileName = "C:\\Users\\User\\Downloads\\250gaza\\basket\\components\\countbutton.js";
+var _jsxFileName = "C:\\Users\\frogg\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\\uC6F9\uAC1C\uBC1C\uACF5\uBD80\\\uC815\uBCF4\uC801\uC0AC\uACE0\\basket\\components\\countbutton.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0__["createElement"];
 
 
@@ -130,7 +130,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-var _jsxFileName = "C:\\Users\\User\\Downloads\\250gaza\\basket\\components\\piechart.js";
+var _jsxFileName = "C:\\Users\\frogg\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\\uC6F9\uAC1C\uBC1C\uACF5\uBD80\\\uC815\uBCF4\uC801\uC0AC\uACE0\\basket\\components\\piechart.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0__["createElement"];
 
 
@@ -2159,10 +2159,10 @@ module.exports = (__webpack_require__(/*! dll-reference dll_5f137288facb1107b491
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5CUsers%5CUser%5CDownloads%5C250gaza%5Cbasket%5Cpages%5Cindex.js!./":
-/*!**********************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5CUsers%5CUser%5CDownloads%5C250gaza%5Cbasket%5Cpages%5Cindex.js ***!
-  \**********************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5CUsers%5Cfrogg%5COneDrive%5C%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4%5C%EC%9B%B9%EA%B0%9C%EB%B0%9C%EA%B3%B5%EB%B6%80%5C%EC%A0%95%EB%B3%B4%EC%A0%81%EC%82%AC%EA%B3%A0%5Cbasket%5Cpages%5Cindex.js!./":
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5CUsers%5Cfrogg%5COneDrive%5C%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4%5C%EC%9B%B9%EA%B0%9C%EB%B0%9C%EA%B3%B5%EB%B6%80%5C%EC%A0%95%EB%B3%B4%EC%A0%81%EC%82%AC%EA%B3%A0%5Cbasket%5Cpages%5Cindex.js ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3036,7 +3036,7 @@ module.exports = (__webpack_require__(/*! dll-reference dll_5f137288facb1107b491
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/** @license React v16.8.6
+/** @license React v16.12.0
  * react-is.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -3058,25 +3058,29 @@ Object.defineProperty(exports, '__esModule', { value: true });
 // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
 // nor polyfill, then a plain number is used for performance.
 var hasSymbol = typeof Symbol === 'function' && Symbol.for;
-
 var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for('react.element') : 0xeac7;
 var REACT_PORTAL_TYPE = hasSymbol ? Symbol.for('react.portal') : 0xeaca;
 var REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for('react.fragment') : 0xeacb;
 var REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for('react.strict_mode') : 0xeacc;
 var REACT_PROFILER_TYPE = hasSymbol ? Symbol.for('react.profiler') : 0xead2;
 var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for('react.provider') : 0xeacd;
-var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for('react.context') : 0xeace;
+var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for('react.context') : 0xeace; // TODO: We don't use AsyncMode or ConcurrentMode anymore. They were temporary
+// (unstable) APIs that have been removed. Can we remove the symbols?
+
 var REACT_ASYNC_MODE_TYPE = hasSymbol ? Symbol.for('react.async_mode') : 0xeacf;
 var REACT_CONCURRENT_MODE_TYPE = hasSymbol ? Symbol.for('react.concurrent_mode') : 0xeacf;
 var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for('react.forward_ref') : 0xead0;
 var REACT_SUSPENSE_TYPE = hasSymbol ? Symbol.for('react.suspense') : 0xead1;
+var REACT_SUSPENSE_LIST_TYPE = hasSymbol ? Symbol.for('react.suspense_list') : 0xead8;
 var REACT_MEMO_TYPE = hasSymbol ? Symbol.for('react.memo') : 0xead3;
 var REACT_LAZY_TYPE = hasSymbol ? Symbol.for('react.lazy') : 0xead4;
+var REACT_FUNDAMENTAL_TYPE = hasSymbol ? Symbol.for('react.fundamental') : 0xead5;
+var REACT_RESPONDER_TYPE = hasSymbol ? Symbol.for('react.responder') : 0xead6;
+var REACT_SCOPE_TYPE = hasSymbol ? Symbol.for('react.scope') : 0xead7;
 
 function isValidElementType(type) {
-  return typeof type === 'string' || typeof type === 'function' ||
-  // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.
-  type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || typeof type === 'object' && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE);
+  return typeof type === 'string' || typeof type === 'function' || // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.
+  type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || typeof type === 'object' && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_RESPONDER_TYPE || type.$$typeof === REACT_SCOPE_TYPE);
 }
 
 /**
@@ -3092,12 +3096,11 @@ function isValidElementType(type) {
  * paths. Removing the logging code for production environments will keep the
  * same logic and follow the same code paths.
  */
-
-var lowPriorityWarning = function () {};
+var lowPriorityWarningWithoutStack = function () {};
 
 {
   var printWarning = function (format) {
-    for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+    for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
       args[_key - 1] = arguments[_key];
     }
 
@@ -3105,9 +3108,11 @@ var lowPriorityWarning = function () {};
     var message = 'Warning: ' + format.replace(/%s/g, function () {
       return args[argIndex++];
     });
+
     if (typeof console !== 'undefined') {
       console.warn(message);
     }
+
     try {
       // --- Welcome to debugging React ---
       // This error was thrown as a convenience so that you can use this stack
@@ -3116,25 +3121,27 @@ var lowPriorityWarning = function () {};
     } catch (x) {}
   };
 
-  lowPriorityWarning = function (condition, format) {
+  lowPriorityWarningWithoutStack = function (condition, format) {
     if (format === undefined) {
-      throw new Error('`lowPriorityWarning(condition, format, ...args)` requires a warning ' + 'message argument');
+      throw new Error('`lowPriorityWarningWithoutStack(condition, format, ...args)` requires a warning ' + 'message argument');
     }
+
     if (!condition) {
-      for (var _len2 = arguments.length, args = Array(_len2 > 2 ? _len2 - 2 : 0), _key2 = 2; _key2 < _len2; _key2++) {
+      for (var _len2 = arguments.length, args = new Array(_len2 > 2 ? _len2 - 2 : 0), _key2 = 2; _key2 < _len2; _key2++) {
         args[_key2 - 2] = arguments[_key2];
       }
 
-      printWarning.apply(undefined, [format].concat(args));
+      printWarning.apply(void 0, [format].concat(args));
     }
   };
 }
 
-var lowPriorityWarning$1 = lowPriorityWarning;
+var lowPriorityWarningWithoutStack$1 = lowPriorityWarningWithoutStack;
 
 function typeOf(object) {
   if (typeof object === 'object' && object !== null) {
     var $$typeof = object.$$typeof;
+
     switch ($$typeof) {
       case REACT_ELEMENT_TYPE:
         var type = object.type;
@@ -3147,29 +3154,32 @@ function typeOf(object) {
           case REACT_STRICT_MODE_TYPE:
           case REACT_SUSPENSE_TYPE:
             return type;
+
           default:
             var $$typeofType = type && type.$$typeof;
 
             switch ($$typeofType) {
               case REACT_CONTEXT_TYPE:
               case REACT_FORWARD_REF_TYPE:
+              case REACT_LAZY_TYPE:
+              case REACT_MEMO_TYPE:
               case REACT_PROVIDER_TYPE:
                 return $$typeofType;
+
               default:
                 return $$typeof;
             }
+
         }
-      case REACT_LAZY_TYPE:
-      case REACT_MEMO_TYPE:
+
       case REACT_PORTAL_TYPE:
         return $$typeof;
     }
   }
 
   return undefined;
-}
+} // AsyncMode is deprecated along with isAsyncMode
 
-// AsyncMode is deprecated along with isAsyncMode
 var AsyncMode = REACT_ASYNC_MODE_TYPE;
 var ConcurrentMode = REACT_CONCURRENT_MODE_TYPE;
 var ContextConsumer = REACT_CONTEXT_TYPE;
@@ -3183,17 +3193,16 @@ var Portal = REACT_PORTAL_TYPE;
 var Profiler = REACT_PROFILER_TYPE;
 var StrictMode = REACT_STRICT_MODE_TYPE;
 var Suspense = REACT_SUSPENSE_TYPE;
+var hasWarnedAboutDeprecatedIsAsyncMode = false; // AsyncMode should be deprecated
 
-var hasWarnedAboutDeprecatedIsAsyncMode = false;
-
-// AsyncMode should be deprecated
 function isAsyncMode(object) {
   {
     if (!hasWarnedAboutDeprecatedIsAsyncMode) {
       hasWarnedAboutDeprecatedIsAsyncMode = true;
-      lowPriorityWarning$1(false, 'The ReactIs.isAsyncMode() alias has been deprecated, ' + 'and will be removed in React 17+. Update your code to use ' + 'ReactIs.isConcurrentMode() instead. It has the exact same API.');
+      lowPriorityWarningWithoutStack$1(false, 'The ReactIs.isAsyncMode() alias has been deprecated, ' + 'and will be removed in React 17+. Update your code to use ' + 'ReactIs.isConcurrentMode() instead. It has the exact same API.');
     }
   }
+
   return isConcurrentMode(object) || typeOf(object) === REACT_ASYNC_MODE_TYPE;
 }
 function isConcurrentMode(object) {
@@ -5907,34 +5916,37 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components */ "./components/index.js");
 
 
-var _jsxFileName = "C:\\Users\\User\\Downloads\\250gaza\\basket\\pages\\index.js";
+var _jsxFileName = "C:\\Users\\frogg\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\\uC6F9\uAC1C\uBC1C\uACF5\uBD80\\\uC815\uBCF4\uC801\uC0AC\uACE0\\basket\\pages\\index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_2__["createElement"];
 
 
 
 
 var Index = function Index() {
-  var _React$useState = react__WEBPACK_IMPORTED_MODULE_2__["useState"]([[0, 0], [0, 0], [0, 0]]),
+  var _React$useState = react__WEBPACK_IMPORTED_MODULE_2__["useState"]([[0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0]]),
       _React$useState2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_1__["default"])(_React$useState, 2),
       counts = _React$useState2[0],
-      setCounts = _React$useState2[1];
+      setCounts = _React$useState2[1]; //local storage에 남아있는 데이터 확인
+
 
   var _React$useState3 = react__WEBPACK_IMPORTED_MODULE_2__["useState"](0),
       _React$useState4 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_1__["default"])(_React$useState3, 2),
       spot = _React$useState4[0],
       setSpot = _React$useState4[1];
 
+  var spotName = ["왼쪽 코너", "오른쪽 코너", "왼쪽 쇼트 코너", "오른쪽 쇼트 코너", "페인트존", "키", "왼쪽 엘보", "오른쪽 엘보", "왼쪽 윙", "오른쪽 윙", "탑"];
   react__WEBPACK_IMPORTED_MODULE_2__["useEffect"](function () {
     if (JSON.parse(localStorage.getItem('counts'))) setCounts(JSON.parse(localStorage.getItem('counts')));
     console.log("pre-counts:", counts);
     if (JSON.parse(localStorage.getItem('spot'))) setSpot(JSON.parse(localStorage.getItem('spot')));
     console.log("pre-spot:", spot);
-  }, []);
+  }, []); //local storage에 남아있는 데이터 확인하기
+
   react__WEBPACK_IMPORTED_MODULE_2__["useEffect"](function () {
     console.log(counts);
   }, [counts]);
   react__WEBPACK_IMPORTED_MODULE_2__["useEffect"](function () {
-    console.log("spot:", spot);
+    console.log("spot:", spotName[spot]);
   }, [spot]);
   react__WEBPACK_IMPORTED_MODULE_2__["useEffect"](function () {
     localStorage.setItem('counts', _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0___default()(counts));
@@ -5970,34 +5982,516 @@ var Index = function Index() {
   return __jsx(Background, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51
+      lineNumber: 53
     },
     __self: this
-  }, ["orange", "blue", "red"].map(function (spotColor, spot) {
-    return __jsx("div", {
-      key: spot,
-      style: {
-        width: "100px",
-        height: "100px",
-        backgroundColor: spotColor
-      },
-      onClick: function onClick() {
-        return setSpot(spot);
-      },
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 54
-      },
-      __self: this
-    });
-  }), __jsx(_components__WEBPACK_IMPORTED_MODULE_4__["CountButton"], {
+  }, __jsx("svg", {
+    height: 1000,
+    width: 1000,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 54
+    },
+    __self: this
+  }, __jsx("line", {
+    x1: "0",
+    x2: "50",
+    y1: "306",
+    y2: "306",
+    stroke: "#000000",
+    style: {
+      strokeDasharray: "6, 6",
+      strokeWidth: "1",
+      opacity: "0.1",
+      shapeRendering: "crispedges"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 55
+    },
+    __self: this
+  }), __jsx("line", {
+    x1: "846",
+    x2: "896",
+    y1: "306",
+    y2: "306",
+    stroke: "#000000",
+    style: {
+      strokeDasharray: "6, 6",
+      strokeWidth: "1",
+      opacity: "0.1",
+      shapeRendering: "crispedges"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 56
+    },
+    __self: this
+  }), __jsx("line", {
+    x1: "50",
+    x2: "306",
+    y1: "306",
+    y2: "306",
+    stroke: "#000000",
+    style: {
+      strokeDasharray: "6, 6",
+      strokeWidth: "1",
+      opacity: "0.1",
+      shapeRendering: "crispedges"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 57
+    },
+    __self: this
+  }), __jsx("line", {
+    x1: "594",
+    x2: "846",
+    y1: "306",
+    y2: "306",
+    stroke: "#000000",
+    style: {
+      strokeDasharray: "6, 6",
+      strokeWidth: "1",
+      opacity: "0.1",
+      shapeRendering: "crispedges"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 58
+    },
+    __self: this
+  }), __jsx("line", {
+    x1: "306",
+    x2: "306",
+    y1: "392",
+    y2: "545",
+    stroke: "#000000",
+    style: {
+      strokeDasharray: "6, 6",
+      strokeWidth: "1",
+      opacity: "0.1",
+      shapeRendering: "crispedges"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 59
+    },
+    __self: this
+  }), __jsx("line", {
+    x1: "594",
+    x2: "594",
+    y1: "392",
+    y2: "545",
+    stroke: "#000000",
+    style: {
+      strokeDasharray: "6, 6",
+      strokeWidth: "1",
+      opacity: "0.1",
+      shapeRendering: "crispedges"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 60
+    },
+    __self: this
+  }), __jsx("line", {
+    x1: "654",
+    x2: "714",
+    y1: "522",
+    y2: "664",
+    stroke: "#000000",
+    style: {
+      strokeDasharray: "6, 6",
+      strokeWidth: "1",
+      opacity: "0.1",
+      shapeRendering: "crispedges"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 61
+    },
+    __self: this
+  }), __jsx("line", {
+    x1: "246",
+    x2: "186",
+    y1: "522",
+    y2: "664",
+    stroke: "#000000",
+    style: {
+      strokeDasharray: "6, 6",
+      strokeWidth: "1",
+      opacity: "0.1",
+      shapeRendering: "crispedges"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 62
+    },
+    __self: this
+  }), __jsx("g", {
+    stroke: "#000000",
+    fill: "none",
+    style: {
+      strokeWidth: "1",
+      zIndex: "-1"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 64
+    },
+    __self: this
+  }, __jsx("line", {
+    x1: "306",
+    x2: "306",
+    y1: "50",
+    y2: "392",
+    style: {
+      shapeRendering: "crispedges"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 65
+    },
+    __self: this
+  }), __jsx("line", {
+    x1: "594",
+    x2: "594",
+    y1: "50",
+    y2: "392",
+    style: {
+      shapeRendering: "crispedges"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 66
+    },
+    __self: this
+  }), __jsx("line", {
+    x1: "306",
+    x2: "594",
+    y1: "392",
+    y2: "392",
+    style: {
+      shapeRendering: "crispedges"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 67
+    },
+    __self: this
+  }), __jsx("line", {
+    x1: "396",
+    x2: "504",
+    y1: "120.2",
+    y2: "120.2",
+    style: {
+      shapeRendering: "crispedges"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 68
+    },
+    __self: this
+  }), __jsx("line", {
+    x1: "378",
+    x2: "378",
+    y1: "125.6",
+    y2: "148.1",
+    style: {
+      shapeRendering: "crispedges"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 69
+    },
+    __self: this
+  }), __jsx("line", {
+    x1: "522",
+    x2: "522",
+    y1: "125.6",
+    y2: "148.1",
+    style: {
+      shapeRendering: "crispedges"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 70
+    },
+    __self: this
+  }), __jsx("line", {
+    x1: "54",
+    x2: "54",
+    y1: "50",
+    y2: "306",
+    style: {
+      shapeRendering: "crispedges"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 71
+    },
+    __self: this
+  }), __jsx("line", {
+    x1: "846",
+    x2: "846",
+    y1: "50",
+    y2: "306",
+    style: {
+      shapeRendering: "crispedges"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 72
+    },
+    __self: this
+  }), __jsx("path", {
+    d: "M54,305A427.5,427.5 1 0,0 846,305",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 73
+    },
+    __self: this
+  }), __jsx("path", {
+    d: "M342,392A108,108 1 0,1 558,392",
+    style: {
+      strokeDasharray: "22.5, 22.5"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 74
+    },
+    __self: this
+  }), __jsx("path", {
+    d: "M342,392A108,108 1 0,0 558,392",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 75
+    },
+    __self: this
+  }), __jsx("circle", {
+    cx: "450",
+    cy: "134.6",
+    r: "13.5",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 76
+    },
+    __self: this
+  }), __jsx("path", {
+    d: "M378,148.1A72,72 1 0,0 522,148.1",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 77
+    },
+    __self: this
+  }), __jsx("line", {
+    x1: "0",
+    x2: "900",
+    y1: "50",
+    y2: "50",
+    style: {
+      shapeRendering: "crispedges",
+      strokeWidth: "2"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 78
+    },
+    __self: this
+  })), __jsx("path", {
+    d: "M0,50L0,306L54,306L54,50L0,50",
+    fill: "red",
+    id: "zone",
+    key: 0,
+    onClick: function onClick() {
+      return setSpot(0);
+    },
+    style: {
+      pointerEvents: "visible",
+      opacity: "0.2"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 81
+    },
+    __self: this
+  }), __jsx("path", {
+    d: "M846,50L846,306L900,306L900,50L846,50",
+    fill: "none",
+    id: "zone",
+    key: 1,
+    onClick: function onClick() {
+      return setSpot(1);
+    },
+    style: {
+      pointerEvents: "visible"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 82
+    },
+    __self: this
+  }), __jsx("path", {
+    d: "M54,50L54,306L306,306L306,50L54,50",
+    fill: "none",
+    id: "zone",
+    key: 2,
+    onClick: function onClick() {
+      return setSpot(2);
+    },
+    style: {
+      pointerEvents: "visible"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 83
+    },
+    __self: this
+  }), __jsx("path", {
+    d: "M594,50L594,306L846,306L846,50L594,50",
+    fill: "none",
+    id: "zone",
+    key: 3,
+    onClick: function onClick() {
+      return setSpot(3);
+    },
+    style: {
+      pointerEvents: "visible"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 84
+    },
+    __self: this
+  }), __jsx("path", {
+    d: "M306,50L306,392L594,392L594,50L306,50",
+    fill: "none",
+    id: "zone",
+    key: 4,
+    onClick: function onClick() {
+      return setSpot(4);
+    },
+    style: {
+      pointerEvents: "visible"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 85
+    },
+    __self: this
+  }), __jsx("path", {
+    d: "M594,545L594,392L306,392L306,545A427.5,427.5 1 0,0 594,545",
+    fill: "none",
+    id: "zone",
+    key: 5,
+    onClick: function onClick() {
+      return setSpot(5);
+    },
+    style: {
+      pointerEvents: "visible"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 86
+    },
+    __self: this
+  }), __jsx("path", {
+    d: "M306,545L306,306L54,306A427.5,427.5 1 0,0 306,545",
+    fill: "none",
+    id: "zone",
+    key: 6,
+    onClick: function onClick() {
+      return setSpot(6);
+    },
+    style: {
+      pointerEvents: "visible"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 87
+    },
+    __self: this
+  }), __jsx("path", {
+    d: "M594,545L594,306L846,306A427.5,427.5 0 0,1 594,545",
+    fill: "none",
+    id: "zone",
+    key: 7,
+    onClick: function onClick() {
+      return setSpot(7);
+    },
+    style: {
+      pointerEvents: "visible"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 88
+    },
+    __self: this
+  }), __jsx("path", {
+    d: "M246,521L186,664L0,664L0,306L54,306A427.5,427.5 0 0,0 246,521",
+    fill: "none",
+    id: "zone",
+    key: 8,
+    onClick: function onClick() {
+      return setSpot(8);
+    },
+    style: {
+      pointerEvents: "visible"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 89
+    },
+    __self: this
+  }), __jsx("path", {
+    d: "M654,521L714,664L900,664L900,306L846,306A427.5,427.5 0 0,1 654,521",
+    fill: "green",
+    id: "zone",
+    key: 9,
+    onClick: function onClick() {
+      return setSpot(9);
+    },
+    style: {
+      pointerEvents: "visible",
+      opacity: "0.2"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 90
+    },
+    __self: this
+  }), __jsx("path", {
+    d: "M246,521L186,664L714,664L654,521A427.5,427.5 0 0,1 246,521",
+    fill: "none",
+    id: "zone",
+    key: 10,
+    onClick: function onClick() {
+      return setSpot(10);
+    },
+    style: {
+      pointerEvents: "visible"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 91
+    },
+    __self: this
+  })), __jsx("div", {
+    className: "spotname",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 93
+    },
+    __self: this
+  }, spotName[spot]), __jsx(_components__WEBPACK_IMPORTED_MODULE_4__["CountButton"], {
     plusOnClick: function plusOnClick() {
       return setCount(spot, 1, 1);
     },
     minusOnClick: function minusOnClick() {
       return setCount(spot, 1, -1);
     },
-    value: counts[spot][1],
+    value: counts[spot] ? counts[spot][1] : 0,
     onChange: function onChange(e) {
       var tempArr = counts.slice();
       tempArr[spot][1] = Number(e.target.value);
@@ -6005,7 +6499,7 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56
+      lineNumber: 94
     },
     __self: this
   }), __jsx(_components__WEBPACK_IMPORTED_MODULE_4__["CountButton"], {
@@ -6015,7 +6509,7 @@ var Index = function Index() {
     minusOnClick: function minusOnClick() {
       return setCount(spot, 0, -1);
     },
-    value: counts[spot][0],
+    value: counts[spot] ? counts[spot][0] : 0,
     onChange: function onChange(e) {
       var tempArr = counts.slice();
       tempArr[spot][0] = Number(e.target.value);
@@ -6023,21 +6517,21 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61
+      lineNumber: 99
     },
     __self: this
   }), __jsx(_components__WEBPACK_IMPORTED_MODULE_4__["Piechart"], {
     ratio: calcSpotRatio(spot),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67
+      lineNumber: 105
     },
     __self: this
   }), __jsx(_components__WEBPACK_IMPORTED_MODULE_4__["Piechart"], {
     ratio: calcAllRatio(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69
+      lineNumber: 107
     },
     __self: this
   }));
@@ -6047,18 +6541,18 @@ var Index = function Index() {
 var Background = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div.withConfig({
   displayName: "pages__Background",
   componentId: "sc-1n2syxe-0"
-})(["position:relative;display:flex;flex-direction:row;"]);
+})(["position:relative;display:flex;flex-direction:row;path{z-index:1;}.spotname{position:absolute;top:500px;left:1000px;}"]);
 
 /***/ }),
 
 /***/ 0:
-/*!**************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5CUsers%5CUser%5CDownloads%5C250gaza%5Cbasket%5Cpages%5Cindex.js ***!
-  \**************************************************************************************************************************************/
+/*!**********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5CUsers%5Cfrogg%5COneDrive%5C%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4%5C%EC%9B%B9%EA%B0%9C%EB%B0%9C%EA%B3%B5%EB%B6%80%5C%EC%A0%95%EB%B3%B4%EC%A0%81%EC%82%AC%EA%B3%A0%5Cbasket%5Cpages%5Cindex.js ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5CUsers%5CUser%5CDownloads%5C250gaza%5Cbasket%5Cpages%5Cindex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5CUsers%5CUser%5CDownloads%5C250gaza%5Cbasket%5Cpages%5Cindex.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5CUsers%5Cfrogg%5COneDrive%5C%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4%5C%EC%9B%B9%EA%B0%9C%EB%B0%9C%EA%B3%B5%EB%B6%80%5C%EC%A0%95%EB%B3%B4%EC%A0%81%EC%82%AC%EA%B3%A0%5Cbasket%5Cpages%5Cindex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5CUsers%5Cfrogg%5COneDrive%5C%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4%5C%EC%9B%B9%EA%B0%9C%EB%B0%9C%EA%B3%B5%EB%B6%80%5C%EC%A0%95%EB%B3%B4%EC%A0%81%EC%82%AC%EA%B3%A0%5Cbasket%5Cpages%5Cindex.js!./");
 
 
 /***/ }),
