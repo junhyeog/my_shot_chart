@@ -572,16 +572,25 @@ const Layout = ({
       lineNumber: 11
     },
     __self: undefined
-  }, "Shot Chart")), __jsx(Component, {
+  }, "Shot Chart"), __jsx("link", {
+    rel: "icon",
+    type: "image/x-icon",
+    href: "/static/titleIcon.png",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 12
+    },
+    __self: undefined
+  })), __jsx(Component, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
     },
     __self: undefined
   }), __jsx(GlobalStyle, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 16
     },
     __self: undefined
   }));

@@ -9,6 +9,8 @@ const Layout = ({ Component }) => {
     <Container>
       <Head>
         <title>Shot Chart</title>
+        <link rel="icon" type="image/x-icon" href="/static/titleIcon.png" />
+
       </Head>
       <Component />
       <GlobalStyle />

@@ -94,7 +94,7 @@ var Index = function Index(props) {
 var ButtonContainer = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "countbutton__ButtonContainer",
   componentId: "sc-1wih92-0"
-})(["position:relative;width:30%;margin:0% 10%;height:100%;border-radius:20px;border:1px solid black;cursor:pointer;.plusButton{position:absolute;top:0px;width:100%;height:35%;border:0px;.text{width:100%;transform:translate(0%,30%);text-align:center;font-size:30px;}}input{position:absolute;top:35%;width:100%;height:30%;border:0px;text-align:center;font-size:30px;outline:none;cursor:text;}.minusButton{position:absolute;bottom:0px;width:100%;height:35%;.text{width:100%;bottom:0px;transform:translate(0%,30%);text-align:center;font-size:30px;}}"]);
+})(["position:relative;width:30%;margin:0% 10%;height:100%;border-radius:20px;border:1px solid black;cursor:pointer;.plusButton{position:absolute;top:0px;width:100%;height:35%;border:0px;.text{width:100%;position:absolute;top:50%;transform:translate(0%,-50%);text-align:center;font-size:30px;}}input{position:absolute;top:35%;width:100%;height:30%;border:0px;text-align:center;font-size:30px;outline:none;cursor:text;}.minusButton{position:absolute;bottom:0px;width:100%;height:35%;.text{position:absolute;width:100%;top:50%;transform:translate(0%,-50%);text-align:center;font-size:30px;}}"]);
 
 /***/ }),
 
@@ -139,6 +139,7 @@ var Index = function Index(props) {
   return __jsx(PieChart, {
     barColor: props.barColor,
     ratio: props.ratio,
+    display: props.display,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 6
@@ -169,10 +170,13 @@ var Index = function Index(props) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Index);
+100 % -300;
 var PieChart = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "piechart__PieChart",
   componentId: "jqrpt1-0"
-})(["position:relative;width:100px;height:100px;margin:0% calc(25% - 50px);.pie{position:relative;display:inline-block;width:100%;height:100%;border-radius:50%;transition:0.3s;background:conic-gradient(", " ", "%,#fff ", "% 100%);.center{background:#fff;position:absolute;top:50%;left:50%;width:80%;height:80%;border-radius:50%;transform:translate(-50%,-50%);}.text{position:absolute;top:50%;left:50%;border-radius:50%;transform:translate(-50%,-50%);}}"], function (props) {
+})(["position:relative;width:100px;height:100px;margin:0% calc(16.67% - 50px);display:", ";.pie{position:relative;display:inline-block;width:100%;height:100%;border-radius:50%;transition:0.3s;background:conic-gradient(", " ", "%,#fff ", "% 100%);.center{background:#fff;position:absolute;top:50%;left:50%;width:80%;height:80%;border-radius:50%;transform:translate(-50%,-50%);}.text{position:absolute;top:50%;left:50%;border-radius:50%;transform:translate(-50%,-50%);}}"], function (props) {
+  return props.display;
+}, function (props) {
   return props.barColor;
 }, function (props) {
   return props.ratio * 100;
@@ -5939,7 +5943,7 @@ var Index = function Index() {
     console.log(" made:", counts[spot][1], "\n", "fail:", counts[spot][0]);
   }, [counts]);
   react__WEBPACK_IMPORTED_MODULE_2__["useEffect"](function () {
-    console.log("spot:", spotName[spot]);
+    console.log("spot:", spotName[spot], spot);
   }, [spot]);
   react__WEBPACK_IMPORTED_MODULE_2__["useEffect"](function () {
     localStorage.setItem('counts', _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0___default()(counts));
@@ -5972,6 +5976,30 @@ var Index = function Index() {
     if (shootNum === 0) return 0;else return (madeNum / shootNum).toFixed(2);
   };
 
+  var calc2Ratio = function calc2Ratio() {
+    var shootNum = 0;
+    var madeNum = 0;
+    counts.map(function (count, idx) {
+      if (2 <= idx && idx <= 7) {
+        shootNum += count[0] + count[1];
+        madeNum += count[1];
+      }
+    });
+    if (shootNum === 0) return 0;else return (madeNum / shootNum).toFixed(2);
+  };
+
+  var calc3Ratio = function calc3Ratio() {
+    var shootNum = 0;
+    var madeNum = 0;
+    counts.map(function (count, idx) {
+      if (2 > idx || idx > 7) {
+        shootNum += count[0] + count[1];
+        madeNum += count[1];
+      }
+    });
+    if (shootNum === 0) return 0;else return (madeNum / shootNum).toFixed(2);
+  };
+
   var perc2color = function perc2color(perc) {
     var r,
         g,
@@ -5993,21 +6021,21 @@ var Index = function Index() {
     displayName: "pages__Path",
     componentId: "sc-1n2syxe-0"
   })(["z-index:1;pointer-events:visible;opacity:", ";fill:", ";"], function (props) {
-    return props.keys === spot ? 0.3 : 0.2;
+    return props.keys === spot ? 1 : 0.5;
   }, function (props) {
-    return perc2color(Number(calcSpotRatio(props.keys)) * 100);
+    return props.keys !== spot && perc2color(Number(calcSpotRatio(props.keys)) * 100);
   });
   return __jsx(Background, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72
+      lineNumber: 96
     },
     __self: this
   }, __jsx("svg", {
     viewBox: "-20 17 940 667",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73
+      lineNumber: 97
     },
     __self: this
   }, __jsx("line", {
@@ -6018,13 +6046,13 @@ var Index = function Index() {
     stroke: "#000000",
     style: {
       strokeDasharray: "6, 6",
-      strokeWidth: "1",
-      opacity: "0.1",
+      strokeWidth: "2",
+      opacity: "0.5",
       shapeRendering: "crispedges"
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74
+      lineNumber: 98
     },
     __self: this
   }), __jsx("line", {
@@ -6035,13 +6063,13 @@ var Index = function Index() {
     stroke: "#000000",
     style: {
       strokeDasharray: "6, 6",
-      strokeWidth: "1",
-      opacity: "0.1",
+      strokeWidth: "2",
+      opacity: "0.5",
       shapeRendering: "crispedges"
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75
+      lineNumber: 99
     },
     __self: this
   }), __jsx("line", {
@@ -6052,13 +6080,13 @@ var Index = function Index() {
     stroke: "#000000",
     style: {
       strokeDasharray: "6, 6",
-      strokeWidth: "1",
-      opacity: "0.1",
+      strokeWidth: "2",
+      opacity: "0.5",
       shapeRendering: "crispedges"
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76
+      lineNumber: 100
     },
     __self: this
   }), __jsx("line", {
@@ -6069,13 +6097,13 @@ var Index = function Index() {
     stroke: "#000000",
     style: {
       strokeDasharray: "6, 6",
-      strokeWidth: "1",
-      opacity: "0.1",
+      strokeWidth: "2",
+      opacity: "0.5",
       shapeRendering: "crispedges"
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77
+      lineNumber: 101
     },
     __self: this
   }), __jsx("line", {
@@ -6086,13 +6114,13 @@ var Index = function Index() {
     stroke: "#000000",
     style: {
       strokeDasharray: "6, 6",
-      strokeWidth: "1",
-      opacity: "0.1",
+      strokeWidth: "2",
+      opacity: "0.5",
       shapeRendering: "crispedges"
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78
+      lineNumber: 102
     },
     __self: this
   }), __jsx("line", {
@@ -6103,13 +6131,13 @@ var Index = function Index() {
     stroke: "#000000",
     style: {
       strokeDasharray: "6, 6",
-      strokeWidth: "1",
-      opacity: "0.1",
+      strokeWidth: "2",
+      opacity: "0.5",
       shapeRendering: "crispedges"
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79
+      lineNumber: 103
     },
     __self: this
   }), __jsx("line", {
@@ -6120,13 +6148,13 @@ var Index = function Index() {
     stroke: "#000000",
     style: {
       strokeDasharray: "6, 6",
-      strokeWidth: "1",
-      opacity: "0.1",
+      strokeWidth: "2",
+      opacity: "0.5",
       shapeRendering: "crispedges"
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80
+      lineNumber: 104
     },
     __self: this
   }), __jsx("line", {
@@ -6137,25 +6165,25 @@ var Index = function Index() {
     stroke: "#000000",
     style: {
       strokeDasharray: "6, 6",
-      strokeWidth: "1",
-      opacity: "0.1",
+      strokeWidth: "2",
+      opacity: "0.5",
       shapeRendering: "crispedges"
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81
+      lineNumber: 105
     },
     __self: this
   }), __jsx("g", {
     stroke: "#000000",
     fill: "none",
     style: {
-      strokeWidth: "1",
+      strokeWidth: "2",
       zIndex: "-1"
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 83
+      lineNumber: 107
     },
     __self: this
   }, __jsx("line", {
@@ -6168,7 +6196,7 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 84
+      lineNumber: 108
     },
     __self: this
   }), __jsx("line", {
@@ -6181,7 +6209,7 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85
+      lineNumber: 109
     },
     __self: this
   }), __jsx("line", {
@@ -6194,7 +6222,7 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86
+      lineNumber: 110
     },
     __self: this
   }), __jsx("line", {
@@ -6207,7 +6235,7 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87
+      lineNumber: 111
     },
     __self: this
   }), __jsx("line", {
@@ -6220,7 +6248,7 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88
+      lineNumber: 112
     },
     __self: this
   }), __jsx("line", {
@@ -6233,7 +6261,7 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89
+      lineNumber: 113
     },
     __self: this
   }), __jsx("line", {
@@ -6246,7 +6274,7 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 90
+      lineNumber: 114
     },
     __self: this
   }), __jsx("line", {
@@ -6259,14 +6287,14 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91
+      lineNumber: 115
     },
     __self: this
   }), __jsx("path", {
     d: "M54,305A427.5,427.5 1 0,0 846,305",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 92
+      lineNumber: 116
     },
     __self: this
   }), __jsx("path", {
@@ -6276,14 +6304,14 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 93
+      lineNumber: 117
     },
     __self: this
   }), __jsx("path", {
     d: "M342,392A108,108 1 0,0 558,392",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94
+      lineNumber: 118
     },
     __self: this
   }), __jsx("circle", {
@@ -6292,14 +6320,14 @@ var Index = function Index() {
     r: "13.5",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95
+      lineNumber: 119
     },
     __self: this
   }), __jsx("path", {
     d: "M378,148.1A72,72 1 0,0 522,148.1",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96
+      lineNumber: 120
     },
     __self: this
   }), __jsx("line", {
@@ -6313,12 +6341,207 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 97
+      lineNumber: 121
     },
     __self: this
-  })), __jsx(Path, {
+  })), __jsx("defs", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 124
+    },
+    __self: this
+  }, __jsx("pattern", {
+    id: "img1",
+    patternUnits: "objectBoundingBox",
+    width: "100%",
+    height: "100%",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 126
+    },
+    __self: this
+  }, __jsx("image", {
+    href: "/static/titleIcon.png",
+    x: "2",
+    y: "100",
+    width: "50",
+    height: "50",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 127
+    },
+    __self: this
+  })), __jsx("pattern", {
+    id: "img2",
+    patternUnits: "objectBoundingBox",
+    width: "100%",
+    height: "100%",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 130
+    },
+    __self: this
+  }, __jsx("image", {
+    href: "/static/titleIcon.png",
+    x: "100",
+    y: "100",
+    width: "50",
+    height: "50",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 131
+    },
+    __self: this
+  })), __jsx("pattern", {
+    id: "img3",
+    patternUnits: "objectBoundingBox",
+    width: "100%",
+    height: "100%",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 134
+    },
+    __self: this
+  }, __jsx("image", {
+    href: "/static/titleIcon.png",
+    x: "118",
+    y: "180",
+    width: "50",
+    height: "50",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 135
+    },
+    __self: this
+  })), __jsx("pattern", {
+    id: "img4",
+    patternUnits: "objectBoundingBox",
+    width: "100%",
+    height: "100%",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 138
+    },
+    __self: this
+  }, __jsx("image", {
+    href: "/static/titleIcon.png",
+    x: "118",
+    y: "40",
+    width: "50",
+    height: "50",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 139
+    },
+    __self: this
+  })), __jsx("pattern", {
+    id: "img5",
+    patternUnits: "objectBoundingBox",
+    width: "100%",
+    height: "100%",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 142
+    },
+    __self: this
+  }, __jsx("image", {
+    href: "/static/titleIcon.png",
+    x: "130",
+    y: "70",
+    width: "50",
+    height: "50",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 143
+    },
+    __self: this
+  })), __jsx("pattern", {
+    id: "img6",
+    patternUnits: "objectBoundingBox",
+    width: "100%",
+    height: "100%",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 146
+    },
+    __self: this
+  }, __jsx("image", {
+    href: "/static/titleIcon.png",
+    x: "70",
+    y: "70",
+    width: "50",
+    height: "50",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 147
+    },
+    __self: this
+  })), __jsx("pattern", {
+    id: "img7",
+    patternUnits: "objectBoundingBox",
+    width: "100%",
+    height: "100%",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 150
+    },
+    __self: this
+  }, __jsx("image", {
+    href: "/static/titleIcon.png",
+    x: "80",
+    y: "140",
+    width: "50",
+    height: "50",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 151
+    },
+    __self: this
+  })), __jsx("pattern", {
+    id: "img8",
+    patternUnits: "objectBoundingBox",
+    width: "100%",
+    height: "100%",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 154
+    },
+    __self: this
+  }, __jsx("image", {
+    href: "/static/titleIcon.png",
+    x: "110",
+    y: "140",
+    width: "50",
+    height: "50",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 155
+    },
+    __self: this
+  })), __jsx("pattern", {
+    id: "img9",
+    patternUnits: "objectBoundingBox",
+    width: "100%",
+    height: "100%",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 158
+    },
+    __self: this
+  }, __jsx("image", {
+    href: "/static/titleIcon.png",
+    x: "235",
+    y: "60",
+    width: "50",
+    height: "50",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 159
+    },
+    __self: this
+  }))), __jsx(Path, {
     d: "M0,50L0,306L54,306L54,50L0,50",
-    fill: "none",
+    fill: "url(#img1)",
     id: "zone",
     keys: 0,
     onClick: function onClick() {
@@ -6326,12 +6549,12 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100
+      lineNumber: 162
     },
     __self: this
   }), __jsx(Path, {
     d: "M846,50L846,306L900,306L900,50L846,50",
-    fill: "none",
+    fill: "url(#img1)",
     id: "zone",
     keys: 1,
     onClick: function onClick() {
@@ -6339,12 +6562,12 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101
+      lineNumber: 163
     },
     __self: this
   }), __jsx(Path, {
     d: "M54,50L54,306L306,306L306,50L54,50",
-    fill: "none",
+    fill: "url(#img2)",
     id: "zone",
     keys: 2,
     onClick: function onClick() {
@@ -6352,12 +6575,12 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102
+      lineNumber: 164
     },
     __self: this
   }), __jsx(Path, {
     d: "M594,50L594,306L846,306L846,50L594,50",
-    fill: "none",
+    fill: "url(#img2)",
     id: "zone",
     keys: 3,
     onClick: function onClick() {
@@ -6365,12 +6588,12 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 103
+      lineNumber: 165
     },
     __self: this
   }), __jsx(Path, {
     d: "M306,50L306,392L594,392L594,50L306,50",
-    fill: "none",
+    fill: "url(#img3)",
     id: "zone",
     keys: 4,
     onClick: function onClick() {
@@ -6378,12 +6601,12 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 104
+      lineNumber: 166
     },
     __self: this
   }), __jsx(Path, {
     d: "M594,545L594,392L306,392L306,545A427.5,427.5 1 0,0 594,545",
-    fill: "none",
+    fill: "url(#img4)",
     id: "zone",
     keys: 5,
     onClick: function onClick() {
@@ -6391,12 +6614,12 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 105
+      lineNumber: 167
     },
     __self: this
   }), __jsx(Path, {
     d: "M306,545L306,306L54,306A427.5,427.5 1 0,0 306,545",
-    fill: "none",
+    fill: "url(#img5)",
     id: "zone",
     keys: 6,
     onClick: function onClick() {
@@ -6404,12 +6627,12 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 106
+      lineNumber: 168
     },
     __self: this
   }), __jsx(Path, {
     d: "M594,545L594,306L846,306A427.5,427.5 0 0,1 594,545",
-    fill: "none",
+    fill: "url(#img6)",
     id: "zone",
     keys: 7,
     onClick: function onClick() {
@@ -6417,12 +6640,12 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 107
+      lineNumber: 169
     },
     __self: this
   }), __jsx(Path, {
     d: "M246,521L186,664L0,664L0,306L54,306A427.5,427.5 0 0,0 246,521",
-    fill: "none",
+    fill: "url(#img7)",
     id: "zone",
     keys: 8,
     onClick: function onClick() {
@@ -6430,12 +6653,12 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 108
+      lineNumber: 170
     },
     __self: this
   }), __jsx(Path, {
     d: "M654,521L714,664L900,664L900,306L846,306A427.5,427.5 0 0,1 654,521",
-    fill: "none",
+    fill: "url(#img8)",
     id: "zone",
     keys: 9,
     onClick: function onClick() {
@@ -6443,12 +6666,12 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 109
+      lineNumber: 171
     },
     __self: this
   }), __jsx(Path, {
     d: "M246,521L186,664L714,664L654,521A427.5,427.5 0 0,1 246,521",
-    fill: "none",
+    fill: "url(#img9)",
     id: "zone",
     keys: 10,
     onClick: function onClick() {
@@ -6456,29 +6679,47 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 110
+      lineNumber: 172
     },
     __self: this
   })), __jsx("div", {
     className: "spotname",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 112
+      lineNumber: 174
     },
     __self: this
   }, spotName[spot]), __jsx("div", {
     className: "chartsContainer",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 113
+      lineNumber: 175
     },
     __self: this
   }, __jsx(_components__WEBPACK_IMPORTED_MODULE_4__["Piechart"], {
+    ratio: calc2Ratio(),
+    display: 2 > spot || spot > 7 ? "none" : "block",
+    barColor: perc2color(Number(calc2Ratio()) * 100),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 177
+    },
+    __self: this
+  }), __jsx(_components__WEBPACK_IMPORTED_MODULE_4__["Piechart"], {
+    ratio: calc3Ratio(),
+    display: 2 <= spot && spot <= 7 ? "none" : "block",
+    barColor: perc2color(Number(calc3Ratio()) * 100),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 178
+    },
+    __self: this
+  }), __jsx(_components__WEBPACK_IMPORTED_MODULE_4__["Piechart"], {
     ratio: calcSpotRatio(spot),
     barColor: perc2color(Number(calcSpotRatio(spot)) * 100),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 115
+      lineNumber: 180
     },
     __self: this
   }), __jsx(_components__WEBPACK_IMPORTED_MODULE_4__["Piechart"], {
@@ -6486,14 +6727,14 @@ var Index = function Index() {
     barColor: perc2color(Number(calcAllRatio()) * 100),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 117
+      lineNumber: 182
     },
     __self: this
   })), __jsx("div", {
     className: "countButtonsContainer",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 119
+      lineNumber: 184
     },
     __self: this
   }, __jsx(_components__WEBPACK_IMPORTED_MODULE_4__["CountButton"], {
@@ -6511,7 +6752,7 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 120
+      lineNumber: 185
     },
     __self: this
   }), __jsx(_components__WEBPACK_IMPORTED_MODULE_4__["CountButton"], {
@@ -6529,7 +6770,7 @@ var Index = function Index() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 125
+      lineNumber: 190
     },
     __self: this
   })));
@@ -6539,11 +6780,11 @@ var Index = function Index() {
 var Background = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div.withConfig({
   displayName: "pages__Background",
   componentId: "sc-1n2syxe-1"
-})(["position:relative;width:100vw;height:100vh;svg{max-width:1000px;position:relative;top:0px;width:100%;height:33%;}.spotname{position:relative;text-align:center;}.countButtonsContainer{position:relative;width:calc(100% - 40px);height:20%;display:flex;margin:20px;margin-top:40px;}.chartsContainer{position:relative;width:calc(100% - 40px);height:100px;display:flex;margin:20px;}"]);
+})(["position:relative;width:100vw;height:100vh;svg{max-width:1000px;position:relative;top:0px;left:50%;transform:translate(-50%,0%);width:100vw;height:40vh;}.spotname{position:relative;text-align:center;font-size:20px;}.countButtonsContainer{position:relative;width:calc(100% - 40px);height:20%;display:flex;margin:20px;margin-top:30px;img{position:absolute;top:100%;width:24px;height:24px;}}.chartsContainer{position:relative;width:calc(100% - 40px);height:100px;display:flex;margin:20px;}"]);
 
 /***/ }),
 
-/***/ 0:
+/***/ 1:
 /*!**************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5CUsers%5CUser%5CDownloads%5C250gaza%5Cbasket%5Cpages%5Cindex.js ***!
   \**************************************************************************************************************************************/
@@ -6566,5 +6807,5 @@ module.exports = dll_5f137288facb1107b491;
 
 /***/ })
 
-},[[0,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

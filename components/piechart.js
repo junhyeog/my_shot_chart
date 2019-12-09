@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Index = (props) => {
     return (
-        <PieChart barColor={props.barColor} ratio={props.ratio}>
+        <PieChart barColor={props.barColor} ratio={props.ratio} display={props.display} >
             <div className="pie">
                 <div className="center" />
                 <div className="text">{props.ratio}</div>
@@ -12,12 +12,13 @@ const Index = (props) => {
     )
 }
 export default Index;
-
+100 % -300
 const PieChart = styled.div`
     position: relative;
     width: 100px;
     height: 100px;
-    margin: 0% calc(25% - 50px);
+    margin: 0% calc(16.67% - 50px);
+    display: ${props => props.display};
     .pie {
         position: relative;
         display:inline-block;
