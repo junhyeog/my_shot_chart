@@ -141,13 +141,15 @@ const Background = styled.div`
     svg {
         max-width:1000px;
         position: relative;
-        top: 0px;
-        width: 100%;
-        height: 33%;
+        top: 0px; left: 50%;
+        transform:translate(-50%,0%);
+        width: 100vw;
+        height: 40vh;
     }
     .spotname {
         position: relative;
         text-align: center;
+        font-size:20px;
     }
     .countButtonsContainer {
         position: relative;
@@ -155,7 +157,13 @@ const Background = styled.div`
         height: 20%;
         display: flex;
         margin: 20px;
-        margin-top: 40px;
+        margin-top: 30px;
+        img{
+            position:absolute;
+            top: 100%;
+            width: 24px;
+            height:24px;
+        }
     }
     .chartsContainer {
         position: relative;

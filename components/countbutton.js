@@ -45,7 +45,9 @@ const ButtonContainer = styled.div`
         border: 0px;
         .text {
             width: 100%;
-            transform: translate(0%, 30%);
+            position: absolute;
+            top: 50%;
+            transform: translate(0%, -50%);
             text-align: center;
             font-size: 30px;
         }
@@ -67,9 +69,10 @@ const ButtonContainer = styled.div`
         width: 100%;
         height: 35%;
         .text {
+            position:absolute;
             width: 100%;
-            bottom: 0px;
-            transform: translate(0%, 30%);
+            top: 50%;
+            transform: translate(0%, -50%);
             text-align: center;
             font-size: 30px;
         }
