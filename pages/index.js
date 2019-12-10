@@ -89,8 +89,13 @@ const Index = () => {
     const Path = styled.path`
         z-index: 1;
         pointer-events: visible;
-        opacity: ${props => props.keys === spot ? 1 : 0.5};
-        fill: ${props => props.keys !== spot && perc2color(Number(calcSpotRatio(props.keys)) * 100)};
+        opacity: ${props => props.keys === spot ? 0.7 : 0.5};
+        fill: ${props => perc2color(Number(calcSpotRatio(props.keys)) * 100)};
+    `
+    const Pathbasket = styled.path`
+        z-index: 1;
+        pointer-events: visible;
+        fill: ${props => props.keys !== spot && "none"};
     `
     return (
         <Background>
@@ -121,55 +126,68 @@ const Index = () => {
                     <line x1="0" x2="900" y1="50" y2="50" style={{ shapeRendering: "crispedges", strokeWidth: "2" }}></line>
                 </g>
                 {/*클릭할 영역*/}
+                <Path d="M0,50L0,306L54,306L54,50L0,50" id="zone" keys={0} onClick={() => setSpot(0)} />
+                <Path d="M846,50L846,306L900,306L900,50L846,50" id="zone" keys={1} onClick={() => setSpot(1)} />
+                <Path d="M54,50L54,306L306,306L306,50L54,50" id="zone" keys={2} onClick={() => setSpot(2)} />
+                <Path d="M594,50L594,306L846,306L846,50L594,50" id="zone" keys={3} onClick={() => setSpot(3)} />
+                <Path d="M306,50L306,392L594,392L594,50L306,50" id="zone" keys={4} onClick={() => setSpot(4)} />
+                <Path d="M594,545L594,392L306,392L306,545A427.5,427.5 1 0,0 594,545" id="zone" keys={5} onClick={() => setSpot(5)} />
+                <Path d="M306,545L306,306L54,306A427.5,427.5 1 0,0 306,545" id="zone" keys={6} onClick={() => setSpot(6)} />
+                <Path d="M594,545L594,306L846,306A427.5,427.5 0 0,1 594,545" id="zone" keys={7} onClick={() => setSpot(7)} />
+                <Path d="M246,521L186,664L0,664L0,306L54,306A427.5,427.5 0 0,0 246,521" id="zone" keys={8} onClick={() => setSpot(8)} />
+                <Path d="M654,521L714,664L900,664L900,306L846,306A427.5,427.5 0 0,1 654,521" id="zone" keys={9} onClick={() => setSpot(9)} />
+                <Path d="M246,521L186,664L714,664L654,521A427.5,427.5 0 0,1 246,521" id="zone" keys={10} onClick={() => setSpot(10)} />
+                
+                <Pathbasket d="M0,50L0,306L54,306L54,50L0,50" fill="url(#img1)" id="zone" keys={0} onClick={() => setSpot(0)} />
+                <Pathbasket d="M846,50L846,306L900,306L900,50L846,50" fill="url(#img1)" id="zone" keys={1} onClick={() => setSpot(1)} />
+                <Pathbasket d="M54,50L54,306L306,306L306,50L54,50" fill="url(#img2)" id="zone" keys={2} onClick={() => setSpot(2)} />
+                <Pathbasket d="M594,50L594,306L846,306L846,50L594,50" fill="url(#img2)" id="zone" keys={3} onClick={() => setSpot(3)} />
+                <Pathbasket d="M306,50L306,392L594,392L594,50L306,50" fill="url(#img3)" id="zone" keys={4} onClick={() => setSpot(4)} />
+                <Pathbasket d="M594,545L594,392L306,392L306,545A427.5,427.5 1 0,0 594,545" fill="url(#img4)" id="zone" keys={5} onClick={() => setSpot(5)} />
+                <Pathbasket d="M306,545L306,306L54,306A427.5,427.5 1 0,0 306,545" fill="url(#img5)" id="zone" keys={6} onClick={() => setSpot(6)} />
+                <Pathbasket d="M594,545L594,306L846,306A427.5,427.5 0 0,1 594,545" fill="url(#img6)" id="zone" keys={7} onClick={() => setSpot(7)} />
+                <Pathbasket d="M246,521L186,664L0,664L0,306L54,306A427.5,427.5 0 0,0 246,521" fill="url(#img7)" id="zone" keys={8} onClick={() => setSpot(8)} />
+                <Pathbasket d="M654,521L714,664L900,664L900,306L846,306A427.5,427.5 0 0,1 654,521" fill="url(#img8)" id="zone" keys={9} onClick={() => setSpot(9)} />
+                <Pathbasket d="M246,521L186,664L714,664L654,521A427.5,427.5 0 0,1 246,521" fill="url(#img9)" id="zone" keys={10} onClick={() => setSpot(10)} />
+
                 <defs>
                     {/* 코너 */}
                     <pattern id="img1" patternUnits="objectBoundingBox" width="100%" height="100%">
-                        <image href="/static/titleIcon.png" x="2" y="100" width="50" height="50" />
+                        <image href="/static/titleIcon.svg" x="2" y="100" width="50" height="50" />
                     </pattern>
                     {/* 쇼트 코너 */}
                     <pattern id="img2" patternUnits="objectBoundingBox" width="100%" height="100%">
-                        <image href="/static/titleIcon.png" x="100" y="100" width="50" height="50" />
+                        <image href="/static/titleIcon.svg" x="100" y="100" width="50" height="50" />
                     </pattern>
                     {/* 페인트존 */}
                     <pattern id="img3" patternUnits="objectBoundingBox" width="100%" height="100%">
-                        <image href="/static/titleIcon.png" x="118" y="180" width="50" height="50" />
+                        <image href="/static/titleIcon.svg" x="118" y="180" width="50" height="50" />
                     </pattern>
                     {/* 키 */}
                     <pattern id="img4" patternUnits="objectBoundingBox" width="100%" height="100%">
-                        <image href="/static/titleIcon.png" x="118" y="40" width="50" height="50" />
+                        <image href="/static/titleIcon.svg" x="118" y="40" width="50" height="50" />
                     </pattern>
                     {/* 왼쪽 엘보 */}
                     <pattern id="img5" patternUnits="objectBoundingBox" width="100%" height="100%">
-                        <image href="/static/titleIcon.png" x="130" y="70" width="50" height="50" />
+                        <image href="/static/titleIcon.svg" x="130" y="70" width="50" height="50" />
                     </pattern>
                     {/* 오른쪽 엘보 */}
                     <pattern id="img6" patternUnits="objectBoundingBox" width="100%" height="100%">
-                        <image href="/static/titleIcon.png" x="70" y="70" width="50" height="50" />
+                        <image href="/static/titleIcon.svg" x="70" y="70" width="50" height="50" />
                     </pattern>
                     {/* 왼쪽 윙 */}
                     <pattern id="img7" patternUnits="objectBoundingBox" width="100%" height="100%">
-                        <image href="/static/titleIcon.png" x="80" y="140" width="50" height="50" />
+                        <image href="/static/titleIcon.svg" x="80" y="140" width="50" height="50" />
                     </pattern>
                     {/* 오른쪽 윙 */}
                     <pattern id="img8" patternUnits="objectBoundingBox" width="100%" height="100%">
-                        <image href="/static/titleIcon.png" x="110" y="140" width="50" height="50" />
+                        <image href="/static/titleIcon.svg" x="110" y="140" width="50" height="50" />
                     </pattern>
                     {/* 탑 */}
                     <pattern id="img9" patternUnits="objectBoundingBox" width="100%" height="100%">
-                        <image href="/static/titleIcon.png" x="235" y="60" width="50" height="50" />
+                        <image href="/static/titleIcon.svg" x="235" y="60" width="50" height="50" />
                     </pattern>
                 </defs>
-                <Path d="M0,50L0,306L54,306L54,50L0,50" fill="url(#img1)" id="zone" keys={0} onClick={() => setSpot(0)} />
-                <Path d="M846,50L846,306L900,306L900,50L846,50" fill="url(#img1)" id="zone" keys={1} onClick={() => setSpot(1)} />
-                <Path d="M54,50L54,306L306,306L306,50L54,50" fill="url(#img2)" id="zone" keys={2} onClick={() => setSpot(2)} />
-                <Path d="M594,50L594,306L846,306L846,50L594,50" fill="url(#img2)" id="zone" keys={3} onClick={() => setSpot(3)} />
-                <Path d="M306,50L306,392L594,392L594,50L306,50" fill="url(#img3)" id="zone" keys={4} onClick={() => setSpot(4)} />
-                <Path d="M594,545L594,392L306,392L306,545A427.5,427.5 1 0,0 594,545" fill="url(#img4)" id="zone" keys={5} onClick={() => setSpot(5)} />
-                <Path d="M306,545L306,306L54,306A427.5,427.5 1 0,0 306,545" fill="url(#img5)" id="zone" keys={6} onClick={() => setSpot(6)} />
-                <Path d="M594,545L594,306L846,306A427.5,427.5 0 0,1 594,545" fill="url(#img6)" id="zone" keys={7} onClick={() => setSpot(7)} />
-                <Path d="M246,521L186,664L0,664L0,306L54,306A427.5,427.5 0 0,0 246,521" fill="url(#img7)" id="zone" keys={8} onClick={() => setSpot(8)} />
-                <Path d="M654,521L714,664L900,664L900,306L846,306A427.5,427.5 0 0,1 654,521" fill="url(#img8)" id="zone" keys={9} onClick={() => setSpot(9)} />
-                <Path d="M246,521L186,664L714,664L654,521A427.5,427.5 0 0,1 246,521" fill="url(#img9)" id="zone" keys={10} onClick={() => setSpot(10)} />
             </svg>
             <div className="spotname">{spotName[spot]}</div>
             <div className="chartsContainer">
@@ -209,6 +227,9 @@ const Background = styled.div`
         transform:translate(-50%,0%);
         width: 100vw;
         height: 40vh;
+        defs{
+            z-index:2;
+        }
     }
     .spotname {
         position: relative;
