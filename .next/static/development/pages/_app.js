@@ -11565,7 +11565,7 @@ var _jsxFileName = "C:\\Users\\User\\Downloads\\250gaza\\basket\\pages\\_app.js"
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 function _templateObject() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  body {\n    margin: 0px;\n  }\n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  body {\n        margin: 0px;\n    }\n  "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -11608,16 +11608,32 @@ var Layout = function Layout(_ref) {
       lineNumber: 12
     },
     __self: this
+  }), __jsx("link", {
+    href: "https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap",
+    rel: "stylesheet",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
+    },
+    __self: this
+  }), __jsx("link", {
+    href: "https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap",
+    rel: "stylesheet",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
+    },
+    __self: this
   })), __jsx(Component, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 16
     },
     __self: this
   }), __jsx(GlobalStyle, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 17
     },
     __self: this
   }));

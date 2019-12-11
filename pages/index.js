@@ -89,7 +89,7 @@ const Index = () => {
     const Path = styled.path`
         z-index: 1;
         pointer-events: visible;
-        opacity: ${props => props.keys === spot ? 0.7 : 0.5};
+        opacity: 0.5;
         fill: ${props => perc2color(Number(calcSpotRatio(props.keys)) * 100)};
     `
     const Pathbasket = styled.path`
@@ -99,7 +99,10 @@ const Index = () => {
     `
     return (
         <Background>
-            <svg viewBox="-20 17 940 667">
+            <HeaderStyle>
+                <div className="text">My Shot Chart</div>
+            </HeaderStyle>
+            <svg viewBox="-20 17 940 667" style={{ top: "30px" }}>
                 <line x1="0" x2="50" y1="306" y2="306" stroke="#000000" style={{ strokeDasharray: "6, 6", strokeWidth: "2", opacity: "0.5", shapeRendering: "crispedges" }}></line>
                 <line x1="846" x2="896" y1="306" y2="306" stroke="#000000" style={{ strokeDasharray: "6, 6", strokeWidth: "2", opacity: "0.5", shapeRendering: "crispedges" }}></line>
                 <line x1="50" x2="306" y1="306" y2="306" stroke="#000000" style={{ strokeDasharray: "6, 6", strokeWidth: "2", opacity: "0.5", shapeRendering: "crispedges" }}></line>
@@ -137,7 +140,7 @@ const Index = () => {
                 <Path d="M246,521L186,664L0,664L0,306L54,306A427.5,427.5 0 0,0 246,521" id="zone" keys={8} onClick={() => setSpot(8)} />
                 <Path d="M654,521L714,664L900,664L900,306L846,306A427.5,427.5 0 0,1 654,521" id="zone" keys={9} onClick={() => setSpot(9)} />
                 <Path d="M246,521L186,664L714,664L654,521A427.5,427.5 0 0,1 246,521" id="zone" keys={10} onClick={() => setSpot(10)} />
-                
+
                 <Pathbasket d="M0,50L0,306L54,306L54,50L0,50" fill="url(#img1)" id="zone" keys={0} onClick={() => setSpot(0)} />
                 <Pathbasket d="M846,50L846,306L900,306L900,50L846,50" fill="url(#img1)" id="zone" keys={1} onClick={() => setSpot(1)} />
                 <Pathbasket d="M54,50L54,306L306,306L306,50L54,50" fill="url(#img2)" id="zone" keys={2} onClick={() => setSpot(2)} />
@@ -192,20 +195,20 @@ const Index = () => {
             <div className="spotname">{spotName[spot]}</div>
             <div className="chartsContainer">
                 {/* 해당 spot의 종류에 따른 성공률 */}
-                <Piechart ratio={calc2Ratio()} display={(2 > spot || spot > 7) ? "none" : "block"} barColor={perc2color(Number(calc2Ratio()) * 100)} />
-                <Piechart ratio={calc3Ratio()} display={(2 <= spot && spot <= 7) ? "none" : "block"} barColor={perc2color(Number(calc3Ratio()) * 100)} />
+                <Piechart title="2점 성공률" ratio={calc2Ratio()} display={(2 > spot || spot > 7) ? "none" : "block"} barColor={perc2color(Number(calc2Ratio()) * 100)} />
+                <Piechart title="3점 성공률" ratio={calc3Ratio()} display={(2 <= spot && spot <= 7) ? "none" : "block"} barColor={perc2color(Number(calc3Ratio()) * 100)} />
                 {/* 각 spot에서의 성공률 */}
-                <Piechart ratio={calcSpotRatio(spot)} barColor={perc2color(Number(calcSpotRatio(spot)) * 100)} />
+                <Piechart title="Spot 성공률" ratio={calcSpotRatio(spot)} barColor={perc2color(Number(calcSpotRatio(spot)) * 100)} />
                 {/* 총 성공률 */}
-                <Piechart ratio={calcAllRatio()} barColor={perc2color(Number(calcAllRatio()) * 100)} />
+                <Piechart title="총 성공률" ratio={calcAllRatio()} barColor={perc2color(Number(calcAllRatio()) * 100)} />
             </div>
             <div className="countButtonsContainer">
-                <CountButton plusOnClick={() => setCount(spot, 1, 1)} minusOnClick={() => setCount(spot, 1, -1)} value={counts[spot] ? counts[spot][1] : 0} onChange={(e) => {
+                <CountButton title="MADE" plusOnClick={() => setCount(spot, 1, 1)} minusOnClick={() => setCount(spot, 1, -1)} value={counts[spot] ? counts[spot][1] : 0} onChange={(e) => {
                     var tempArr = counts.slice()
                     tempArr[spot][1] = Number(e.target.value)
                     setCounts(tempArr)
                 }} />
-                <CountButton plusOnClick={() => setCount(spot, 0, 1)} minusOnClick={() => setCount(spot, 0, -1)} value={counts[spot] ? counts[spot][0] : 0} onChange={(e) => {
+                <CountButton title="FAIL" plusOnClick={() => setCount(spot, 0, 1)} minusOnClick={() => setCount(spot, 0, -1)} value={counts[spot] ? counts[spot][0] : 0} onChange={(e) => {
                     var tempArr = counts.slice()
                     tempArr[spot][0] = Number(e.target.value)
                     setCounts(tempArr)
@@ -215,11 +218,42 @@ const Index = () => {
     )
 }
 export default Index
-
+const HeaderStyle = styled.div`
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 35px;
+    background-color: #ff5722;
+    opacity: 0.8;
+    z-index: 1;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.16);
+    padding-top: 20px;
+    .text{
+        width: 100%;
+        font-size: 30px;
+        font-family: 'Bebas Neue', cursive;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 0.75;
+        letter-spacing: 1.5px;
+        text-align: center;
+        color: #ffffff;
+    }
+    
+`
 const Background = styled.div`
     position: relative;
+    display: block;
     width: 100vw;
     height: 100vh;
+    font-family: 'Noto Sans KR';
+    font-size: 30px;
+    font-weight: 100;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.17;
+    letter-spacing: normal;
     svg {
         max-width:1000px;
         position: relative;

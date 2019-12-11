@@ -10,7 +10,8 @@ const Layout = ({ Component }) => {
       <Head>
         <title>Shot Chart</title>
         <link rel="icon" type="image/x-icon" href="/static/titleIcon.png" />
-
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet" />
       </Head>
       <Component />
       <GlobalStyle />
@@ -21,6 +22,6 @@ export default Layout;
 
 const GlobalStyle = createGlobalStyle`
   body {
-    margin: 0px;
-  }
-`
+        margin: 0px;
+    }
+  `

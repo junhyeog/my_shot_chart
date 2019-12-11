@@ -581,16 +581,32 @@ const Layout = ({
       lineNumber: 12
     },
     __self: undefined
+  }), __jsx("link", {
+    href: "https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap",
+    rel: "stylesheet",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
+    },
+    __self: undefined
+  }), __jsx("link", {
+    href: "https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap",
+    rel: "stylesheet",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
+    },
+    __self: undefined
   })), __jsx(Component, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 16
     },
     __self: undefined
   }), __jsx(GlobalStyle, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 17
     },
     __self: undefined
   }));
@@ -599,9 +615,9 @@ const Layout = ({
 /* harmony default export */ __webpack_exports__["default"] = (Layout);
 const GlobalStyle = styled_components__WEBPACK_IMPORTED_MODULE_3__["createGlobalStyle"]`
   body {
-    margin: 0px;
-  }
-`;
+        margin: 0px;
+    }
+  `;
 
 /***/ }),
 

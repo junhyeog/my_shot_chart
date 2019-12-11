@@ -24,6 +24,7 @@ const Index = (props) => {
             <div className="plusButton" onClick={props.plusOnClick}><div className="text">+</div></div>
             <input onKeyDown={(e) => filterNumber(e)} value={props.value} onChange={props.onChange}></input>
             <div className="minusButton" onClick={props.minusOnClick}><div className="text">-</div></div>
+            <div className="title">{props.title}</div>
         </ButtonContainer>
     )
 }
@@ -31,12 +32,20 @@ export default Index
 
 const ButtonContainer = styled.div`
     position: relative;
-    width: 30%;
-    margin: 0% 10%;
+    width: 100px;
+    margin: 20px calc(25% - 50px);
     height: 100%;
     border-radius: 20px;
     border:  1px solid black;
     cursor: pointer;
+    .title {
+        position: relative;
+        top: 103%;
+        width: 100%;
+        text-align: center;
+        letter-spacing: 5px;
+        text-indent: 2.5px;
+    }
     .plusButton {
         position: absolute;
         top: 0px;

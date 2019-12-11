@@ -179,14 +179,21 @@ const Index = props => {
       lineNumber: 26
     },
     __self: undefined
-  }, "-")));
+  }, "-")), __jsx("div", {
+    className: "title",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 27
+    },
+    __self: undefined
+  }, props.title));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Index);
 const ButtonContainer = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "countbutton__ButtonContainer",
   componentId: "sc-1wih92-0"
-})(["position:relative;width:30%;margin:0% 10%;height:100%;border-radius:20px;border:1px solid black;cursor:pointer;.plusButton{position:absolute;top:0px;width:100%;height:35%;border:0px;.text{width:100%;position:absolute;top:50%;transform:translate(0%,-50%);text-align:center;font-size:30px;}}input{position:absolute;top:35%;width:100%;height:30%;border:0px;text-align:center;font-size:30px;outline:none;cursor:text;}.minusButton{position:absolute;bottom:0px;width:100%;height:35%;.text{position:absolute;width:100%;top:50%;transform:translate(0%,-50%);text-align:center;font-size:30px;}}"]);
+})(["position:relative;width:100px;margin:20px calc(25% - 50px);height:100%;border-radius:20px;border:1px solid black;cursor:pointer;.title{position:relative;top:103%;width:100%;text-align:center;letter-spacing:5px;text-indent:2.5px;}.plusButton{position:absolute;top:0px;width:100%;height:35%;border:0px;.text{width:100%;position:absolute;top:50%;transform:translate(0%,-50%);text-align:center;font-size:30px;}}input{position:absolute;top:35%;width:100%;height:30%;border:0px;text-align:center;font-size:30px;outline:none;cursor:text;}.minusButton{position:absolute;bottom:0px;width:100%;height:35%;.text{position:absolute;width:100%;top:50%;transform:translate(0%,-50%);text-align:center;font-size:30px;}}"]);
 
 /***/ }),
 
@@ -233,6 +240,7 @@ const Index = props => {
     barColor: props.barColor,
     ratio: props.ratio,
     display: props.display,
+    title: props.title,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 6
@@ -259,15 +267,21 @@ const Index = props => {
       lineNumber: 9
     },
     __self: undefined
-  }, props.ratio)));
+  }, props.ratio)), __jsx("div", {
+    className: "title",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    },
+    __self: undefined
+  }, props.title));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Index);
-100 % -300;
 const PieChart = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "piechart__PieChart",
   componentId: "jqrpt1-0"
-})(["position:relative;width:100px;height:100px;margin:0% calc(16.67% - 50px);display:", ";.pie{position:relative;display:inline-block;width:100%;height:100%;border-radius:50%;transition:0.3s;background:conic-gradient(", " ", "%,#fff ", "% 100%);.center{background:#fff;position:absolute;top:50%;left:50%;width:80%;height:80%;border-radius:50%;transform:translate(-50%,-50%);}.text{position:absolute;top:50%;left:50%;border-radius:50%;transform:translate(-50%,-50%);}}"], props => props.display, props => props.barColor, props => props.ratio * 100, props => props.ratio * 100 + 2);
+})(["position:relative;width:100px;height:100px;margin:0% calc(16.67% - 50px);display:", ";.title{position:relative;text-align:center;margin:10px;width:120%;right:20%;font-size:15px;font-weight:100;}.pie{position:relative;display:inline-block;width:100%;height:100%;border-radius:50%;transition:0.3s;background:conic-gradient(", " ", "%,#fff ", "% 100%);.center{background:#fff;position:absolute;top:50%;left:50%;width:80%;height:80%;border-radius:50%;transform:translate(-50%,-50%);}.text{position:absolute;top:50%;left:50%;border-radius:50%;transform:translate(-50%,-50%);font-size:20px;font-weight:100;font-stretch:normal;font-style:oblique;line-height:1.17;letter-spacing:normal;}}"], props => props.display, props => props.barColor, props => props.ratio * 100, props => props.ratio * 100 + 2);
 
 /***/ }),
 
@@ -398,18 +412,38 @@ const Index = () => {
   const Path = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.path.withConfig({
     displayName: "pages__Path",
     componentId: "sc-1n2syxe-0"
-  })(["z-index:1;pointer-events:visible;opacity:", ";fill:", ";"], props => props.keys === spot ? 1 : 0.5, props => props.keys !== spot && perc2color(Number(calcSpotRatio(props.keys)) * 100));
+  })(["z-index:1;pointer-events:visible;opacity:0.5;fill:", ";"], props => perc2color(Number(calcSpotRatio(props.keys)) * 100));
+  const Pathbasket = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.path.withConfig({
+    displayName: "pages__Pathbasket",
+    componentId: "sc-1n2syxe-1"
+  })(["z-index:1;pointer-events:visible;fill:", ";"], props => props.keys !== spot && "none");
   return __jsx(Background, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96
+      lineNumber: 101
     },
     __self: undefined
-  }, __jsx("svg", {
-    viewBox: "-20 17 940 667",
+  }, __jsx(HeaderStyle, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 97
+      lineNumber: 102
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "text",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 103
+    },
+    __self: undefined
+  }, "My Shot Chart")), __jsx("svg", {
+    viewBox: "-20 17 940 667",
+    style: {
+      top: "30px"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 105
     },
     __self: undefined
   }, __jsx("line", {
@@ -426,7 +460,7 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 98
+      lineNumber: 106
     },
     __self: undefined
   }), __jsx("line", {
@@ -443,7 +477,7 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99
+      lineNumber: 107
     },
     __self: undefined
   }), __jsx("line", {
@@ -460,7 +494,7 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100
+      lineNumber: 108
     },
     __self: undefined
   }), __jsx("line", {
@@ -477,7 +511,7 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101
+      lineNumber: 109
     },
     __self: undefined
   }), __jsx("line", {
@@ -494,7 +528,7 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102
+      lineNumber: 110
     },
     __self: undefined
   }), __jsx("line", {
@@ -511,7 +545,7 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 103
+      lineNumber: 111
     },
     __self: undefined
   }), __jsx("line", {
@@ -528,7 +562,7 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 104
+      lineNumber: 112
     },
     __self: undefined
   }), __jsx("line", {
@@ -545,7 +579,7 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 105
+      lineNumber: 113
     },
     __self: undefined
   }), __jsx("g", {
@@ -557,7 +591,7 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 107
+      lineNumber: 115
     },
     __self: undefined
   }, __jsx("line", {
@@ -570,7 +604,7 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 108
+      lineNumber: 116
     },
     __self: undefined
   }), __jsx("line", {
@@ -583,7 +617,7 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 109
+      lineNumber: 117
     },
     __self: undefined
   }), __jsx("line", {
@@ -596,7 +630,7 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 110
+      lineNumber: 118
     },
     __self: undefined
   }), __jsx("line", {
@@ -609,7 +643,7 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 111
+      lineNumber: 119
     },
     __self: undefined
   }), __jsx("line", {
@@ -622,7 +656,7 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 112
+      lineNumber: 120
     },
     __self: undefined
   }), __jsx("line", {
@@ -635,7 +669,7 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 113
+      lineNumber: 121
     },
     __self: undefined
   }), __jsx("line", {
@@ -648,7 +682,7 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 114
+      lineNumber: 122
     },
     __self: undefined
   }), __jsx("line", {
@@ -661,14 +695,14 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 115
+      lineNumber: 123
     },
     __self: undefined
   }), __jsx("path", {
     d: "M54,305A427.5,427.5 1 0,0 846,305",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 116
+      lineNumber: 124
     },
     __self: undefined
   }), __jsx("path", {
@@ -678,14 +712,14 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 117
+      lineNumber: 125
     },
     __self: undefined
   }), __jsx("path", {
     d: "M342,392A108,108 1 0,0 558,392",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 118
+      lineNumber: 126
     },
     __self: undefined
   }), __jsx("circle", {
@@ -694,14 +728,14 @@ const Index = () => {
     r: "13.5",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 119
+      lineNumber: 127
     },
     __self: undefined
   }), __jsx("path", {
     d: "M378,148.1A72,72 1 0,0 522,148.1",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 120
+      lineNumber: 128
     },
     __self: undefined
   }), __jsx("line", {
@@ -715,13 +749,244 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 121
+      lineNumber: 129
     },
     __self: undefined
-  })), __jsx("defs", {
+  })), __jsx(Path, {
+    d: "M0,50L0,306L54,306L54,50L0,50",
+    id: "zone",
+    keys: 0,
+    onClick: () => setSpot(0),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 124
+      lineNumber: 132
+    },
+    __self: undefined
+  }), __jsx(Path, {
+    d: "M846,50L846,306L900,306L900,50L846,50",
+    id: "zone",
+    keys: 1,
+    onClick: () => setSpot(1),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 133
+    },
+    __self: undefined
+  }), __jsx(Path, {
+    d: "M54,50L54,306L306,306L306,50L54,50",
+    id: "zone",
+    keys: 2,
+    onClick: () => setSpot(2),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 134
+    },
+    __self: undefined
+  }), __jsx(Path, {
+    d: "M594,50L594,306L846,306L846,50L594,50",
+    id: "zone",
+    keys: 3,
+    onClick: () => setSpot(3),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 135
+    },
+    __self: undefined
+  }), __jsx(Path, {
+    d: "M306,50L306,392L594,392L594,50L306,50",
+    id: "zone",
+    keys: 4,
+    onClick: () => setSpot(4),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 136
+    },
+    __self: undefined
+  }), __jsx(Path, {
+    d: "M594,545L594,392L306,392L306,545A427.5,427.5 1 0,0 594,545",
+    id: "zone",
+    keys: 5,
+    onClick: () => setSpot(5),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 137
+    },
+    __self: undefined
+  }), __jsx(Path, {
+    d: "M306,545L306,306L54,306A427.5,427.5 1 0,0 306,545",
+    id: "zone",
+    keys: 6,
+    onClick: () => setSpot(6),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 138
+    },
+    __self: undefined
+  }), __jsx(Path, {
+    d: "M594,545L594,306L846,306A427.5,427.5 0 0,1 594,545",
+    id: "zone",
+    keys: 7,
+    onClick: () => setSpot(7),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 139
+    },
+    __self: undefined
+  }), __jsx(Path, {
+    d: "M246,521L186,664L0,664L0,306L54,306A427.5,427.5 0 0,0 246,521",
+    id: "zone",
+    keys: 8,
+    onClick: () => setSpot(8),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 140
+    },
+    __self: undefined
+  }), __jsx(Path, {
+    d: "M654,521L714,664L900,664L900,306L846,306A427.5,427.5 0 0,1 654,521",
+    id: "zone",
+    keys: 9,
+    onClick: () => setSpot(9),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 141
+    },
+    __self: undefined
+  }), __jsx(Path, {
+    d: "M246,521L186,664L714,664L654,521A427.5,427.5 0 0,1 246,521",
+    id: "zone",
+    keys: 10,
+    onClick: () => setSpot(10),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 142
+    },
+    __self: undefined
+  }), __jsx(Pathbasket, {
+    d: "M0,50L0,306L54,306L54,50L0,50",
+    fill: "url(#img1)",
+    id: "zone",
+    keys: 0,
+    onClick: () => setSpot(0),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 144
+    },
+    __self: undefined
+  }), __jsx(Pathbasket, {
+    d: "M846,50L846,306L900,306L900,50L846,50",
+    fill: "url(#img1)",
+    id: "zone",
+    keys: 1,
+    onClick: () => setSpot(1),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 145
+    },
+    __self: undefined
+  }), __jsx(Pathbasket, {
+    d: "M54,50L54,306L306,306L306,50L54,50",
+    fill: "url(#img2)",
+    id: "zone",
+    keys: 2,
+    onClick: () => setSpot(2),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 146
+    },
+    __self: undefined
+  }), __jsx(Pathbasket, {
+    d: "M594,50L594,306L846,306L846,50L594,50",
+    fill: "url(#img2)",
+    id: "zone",
+    keys: 3,
+    onClick: () => setSpot(3),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 147
+    },
+    __self: undefined
+  }), __jsx(Pathbasket, {
+    d: "M306,50L306,392L594,392L594,50L306,50",
+    fill: "url(#img3)",
+    id: "zone",
+    keys: 4,
+    onClick: () => setSpot(4),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 148
+    },
+    __self: undefined
+  }), __jsx(Pathbasket, {
+    d: "M594,545L594,392L306,392L306,545A427.5,427.5 1 0,0 594,545",
+    fill: "url(#img4)",
+    id: "zone",
+    keys: 5,
+    onClick: () => setSpot(5),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 149
+    },
+    __self: undefined
+  }), __jsx(Pathbasket, {
+    d: "M306,545L306,306L54,306A427.5,427.5 1 0,0 306,545",
+    fill: "url(#img5)",
+    id: "zone",
+    keys: 6,
+    onClick: () => setSpot(6),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 150
+    },
+    __self: undefined
+  }), __jsx(Pathbasket, {
+    d: "M594,545L594,306L846,306A427.5,427.5 0 0,1 594,545",
+    fill: "url(#img6)",
+    id: "zone",
+    keys: 7,
+    onClick: () => setSpot(7),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 151
+    },
+    __self: undefined
+  }), __jsx(Pathbasket, {
+    d: "M246,521L186,664L0,664L0,306L54,306A427.5,427.5 0 0,0 246,521",
+    fill: "url(#img7)",
+    id: "zone",
+    keys: 8,
+    onClick: () => setSpot(8),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 152
+    },
+    __self: undefined
+  }), __jsx(Pathbasket, {
+    d: "M654,521L714,664L900,664L900,306L846,306A427.5,427.5 0 0,1 654,521",
+    fill: "url(#img8)",
+    id: "zone",
+    keys: 9,
+    onClick: () => setSpot(9),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 153
+    },
+    __self: undefined
+  }), __jsx(Pathbasket, {
+    d: "M246,521L186,664L714,664L654,521A427.5,427.5 0 0,1 246,521",
+    fill: "url(#img9)",
+    id: "zone",
+    keys: 10,
+    onClick: () => setSpot(10),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 154
+    },
+    __self: undefined
+  }), __jsx("defs", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 156
     },
     __self: undefined
   }, __jsx("pattern", {
@@ -731,18 +996,18 @@ const Index = () => {
     height: "100%",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 126
+      lineNumber: 158
     },
     __self: undefined
   }, __jsx("image", {
-    href: "/static/titleIcon.png",
+    href: "/static/titleIcon.svg",
     x: "2",
     y: "100",
     width: "50",
     height: "50",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 127
+      lineNumber: 159
     },
     __self: undefined
   })), __jsx("pattern", {
@@ -752,18 +1017,18 @@ const Index = () => {
     height: "100%",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 130
+      lineNumber: 162
     },
     __self: undefined
   }, __jsx("image", {
-    href: "/static/titleIcon.png",
+    href: "/static/titleIcon.svg",
     x: "100",
     y: "100",
     width: "50",
     height: "50",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 131
+      lineNumber: 163
     },
     __self: undefined
   })), __jsx("pattern", {
@@ -773,18 +1038,18 @@ const Index = () => {
     height: "100%",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 134
+      lineNumber: 166
     },
     __self: undefined
   }, __jsx("image", {
-    href: "/static/titleIcon.png",
+    href: "/static/titleIcon.svg",
     x: "118",
     y: "180",
     width: "50",
     height: "50",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 135
+      lineNumber: 167
     },
     __self: undefined
   })), __jsx("pattern", {
@@ -794,18 +1059,18 @@ const Index = () => {
     height: "100%",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 138
+      lineNumber: 170
     },
     __self: undefined
   }, __jsx("image", {
-    href: "/static/titleIcon.png",
+    href: "/static/titleIcon.svg",
     x: "118",
     y: "40",
     width: "50",
     height: "50",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 139
+      lineNumber: 171
     },
     __self: undefined
   })), __jsx("pattern", {
@@ -815,18 +1080,18 @@ const Index = () => {
     height: "100%",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 142
+      lineNumber: 174
     },
     __self: undefined
   }, __jsx("image", {
-    href: "/static/titleIcon.png",
+    href: "/static/titleIcon.svg",
     x: "130",
     y: "70",
     width: "50",
     height: "50",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 143
+      lineNumber: 175
     },
     __self: undefined
   })), __jsx("pattern", {
@@ -836,18 +1101,18 @@ const Index = () => {
     height: "100%",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 146
+      lineNumber: 178
     },
     __self: undefined
   }, __jsx("image", {
-    href: "/static/titleIcon.png",
+    href: "/static/titleIcon.svg",
     x: "70",
     y: "70",
     width: "50",
     height: "50",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 147
+      lineNumber: 179
     },
     __self: undefined
   })), __jsx("pattern", {
@@ -857,18 +1122,18 @@ const Index = () => {
     height: "100%",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 150
+      lineNumber: 182
     },
     __self: undefined
   }, __jsx("image", {
-    href: "/static/titleIcon.png",
+    href: "/static/titleIcon.svg",
     x: "80",
     y: "140",
     width: "50",
     height: "50",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 151
+      lineNumber: 183
     },
     __self: undefined
   })), __jsx("pattern", {
@@ -878,18 +1143,18 @@ const Index = () => {
     height: "100%",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 154
+      lineNumber: 186
     },
     __self: undefined
   }, __jsx("image", {
-    href: "/static/titleIcon.png",
+    href: "/static/titleIcon.svg",
     x: "110",
     y: "140",
     width: "50",
     height: "50",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 155
+      lineNumber: 187
     },
     __self: undefined
   })), __jsx("pattern", {
@@ -899,197 +1164,81 @@ const Index = () => {
     height: "100%",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 158
+      lineNumber: 190
     },
     __self: undefined
   }, __jsx("image", {
-    href: "/static/titleIcon.png",
+    href: "/static/titleIcon.svg",
     x: "235",
     y: "60",
     width: "50",
     height: "50",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 159
+      lineNumber: 191
     },
     __self: undefined
-  }))), __jsx(Path, {
-    d: "M0,50L0,306L54,306L54,50L0,50",
-    fill: "url(#img1)",
-    id: "zone",
-    keys: 0,
-    onClick: () => setSpot(0),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 162
-    },
-    __self: undefined
-  }), __jsx(Path, {
-    d: "M846,50L846,306L900,306L900,50L846,50",
-    fill: "url(#img1)",
-    id: "zone",
-    keys: 1,
-    onClick: () => setSpot(1),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 163
-    },
-    __self: undefined
-  }), __jsx(Path, {
-    d: "M54,50L54,306L306,306L306,50L54,50",
-    fill: "url(#img2)",
-    id: "zone",
-    keys: 2,
-    onClick: () => setSpot(2),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 164
-    },
-    __self: undefined
-  }), __jsx(Path, {
-    d: "M594,50L594,306L846,306L846,50L594,50",
-    fill: "url(#img2)",
-    id: "zone",
-    keys: 3,
-    onClick: () => setSpot(3),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 165
-    },
-    __self: undefined
-  }), __jsx(Path, {
-    d: "M306,50L306,392L594,392L594,50L306,50",
-    fill: "url(#img3)",
-    id: "zone",
-    keys: 4,
-    onClick: () => setSpot(4),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 166
-    },
-    __self: undefined
-  }), __jsx(Path, {
-    d: "M594,545L594,392L306,392L306,545A427.5,427.5 1 0,0 594,545",
-    fill: "url(#img4)",
-    id: "zone",
-    keys: 5,
-    onClick: () => setSpot(5),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 167
-    },
-    __self: undefined
-  }), __jsx(Path, {
-    d: "M306,545L306,306L54,306A427.5,427.5 1 0,0 306,545",
-    fill: "url(#img5)",
-    id: "zone",
-    keys: 6,
-    onClick: () => setSpot(6),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 168
-    },
-    __self: undefined
-  }), __jsx(Path, {
-    d: "M594,545L594,306L846,306A427.5,427.5 0 0,1 594,545",
-    fill: "url(#img6)",
-    id: "zone",
-    keys: 7,
-    onClick: () => setSpot(7),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 169
-    },
-    __self: undefined
-  }), __jsx(Path, {
-    d: "M246,521L186,664L0,664L0,306L54,306A427.5,427.5 0 0,0 246,521",
-    fill: "url(#img7)",
-    id: "zone",
-    keys: 8,
-    onClick: () => setSpot(8),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 170
-    },
-    __self: undefined
-  }), __jsx(Path, {
-    d: "M654,521L714,664L900,664L900,306L846,306A427.5,427.5 0 0,1 654,521",
-    fill: "url(#img8)",
-    id: "zone",
-    keys: 9,
-    onClick: () => setSpot(9),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 171
-    },
-    __self: undefined
-  }), __jsx(Path, {
-    d: "M246,521L186,664L714,664L654,521A427.5,427.5 0 0,1 246,521",
-    fill: "url(#img9)",
-    id: "zone",
-    keys: 10,
-    onClick: () => setSpot(10),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 172
-    },
-    __self: undefined
-  })), __jsx("div", {
+  })))), __jsx("div", {
     className: "spotname",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 174
+      lineNumber: 195
     },
     __self: undefined
   }, spotName[spot]), __jsx("div", {
     className: "chartsContainer",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 175
+      lineNumber: 196
     },
     __self: undefined
   }, __jsx(_components__WEBPACK_IMPORTED_MODULE_3__["Piechart"], {
+    title: "2\uC810 \uC131\uACF5\uB960",
     ratio: calc2Ratio(),
     display: 2 > spot || spot > 7 ? "none" : "block",
     barColor: perc2color(Number(calc2Ratio()) * 100),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 177
+      lineNumber: 198
     },
     __self: undefined
   }), __jsx(_components__WEBPACK_IMPORTED_MODULE_3__["Piechart"], {
+    title: "3\uC810 \uC131\uACF5\uB960",
     ratio: calc3Ratio(),
     display: 2 <= spot && spot <= 7 ? "none" : "block",
     barColor: perc2color(Number(calc3Ratio()) * 100),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 178
+      lineNumber: 199
     },
     __self: undefined
   }), __jsx(_components__WEBPACK_IMPORTED_MODULE_3__["Piechart"], {
+    title: "Spot \uC131\uACF5\uB960",
     ratio: calcSpotRatio(spot),
     barColor: perc2color(Number(calcSpotRatio(spot)) * 100),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 180
+      lineNumber: 201
     },
     __self: undefined
   }), __jsx(_components__WEBPACK_IMPORTED_MODULE_3__["Piechart"], {
+    title: "\uCD1D \uC131\uACF5\uB960",
     ratio: calcAllRatio(),
     barColor: perc2color(Number(calcAllRatio()) * 100),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 182
+      lineNumber: 203
     },
     __self: undefined
   })), __jsx("div", {
     className: "countButtonsContainer",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 184
+      lineNumber: 205
     },
     __self: undefined
   }, __jsx(_components__WEBPACK_IMPORTED_MODULE_3__["CountButton"], {
+    title: "MADE",
     plusOnClick: () => setCount(spot, 1, 1),
     minusOnClick: () => setCount(spot, 1, -1),
     value: counts[spot] ? counts[spot][1] : 0,
@@ -1100,10 +1249,11 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 185
+      lineNumber: 206
     },
     __self: undefined
   }), __jsx(_components__WEBPACK_IMPORTED_MODULE_3__["CountButton"], {
+    title: "FAIL",
     plusOnClick: () => setCount(spot, 0, 1),
     minusOnClick: () => setCount(spot, 0, -1),
     value: counts[spot] ? counts[spot][0] : 0,
@@ -1114,17 +1264,21 @@ const Index = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 190
+      lineNumber: 211
     },
     __self: undefined
   })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Index);
+const HeaderStyle = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div.withConfig({
+  displayName: "pages__HeaderStyle",
+  componentId: "sc-1n2syxe-2"
+})(["position:absolute;top:0px;width:100%;height:35px;background-color:#ff5722;opacity:0.8;z-index:1;box-shadow:0 1px 2px 0 rgba(0,0,0,0.16);padding-top:20px;.text{width:100%;font-size:30px;font-family:'Bebas Neue',cursive;font-weight:normal;font-stretch:normal;font-style:normal;line-height:0.75;letter-spacing:1.5px;text-align:center;color:#ffffff;}"]);
 const Background = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div.withConfig({
   displayName: "pages__Background",
-  componentId: "sc-1n2syxe-1"
-})(["position:relative;width:100vw;height:100vh;svg{max-width:1000px;position:relative;top:0px;left:50%;transform:translate(-50%,0%);width:100vw;height:40vh;}.spotname{position:relative;text-align:center;font-size:20px;}.countButtonsContainer{position:relative;width:calc(100% - 40px);height:20%;display:flex;margin:20px;margin-top:30px;img{position:absolute;top:100%;width:24px;height:24px;}}.chartsContainer{position:relative;width:calc(100% - 40px);height:100px;display:flex;margin:20px;}"]);
+  componentId: "sc-1n2syxe-3"
+})(["position:relative;display:block;width:100vw;height:100vh;font-family:'Noto Sans KR';font-size:30px;font-weight:100;font-stretch:normal;font-style:normal;line-height:1.17;letter-spacing:normal;svg{max-width:1000px;position:relative;top:0px;left:50%;transform:translate(-50%,0%);width:100vw;height:40vh;defs{z-index:2;}}.spotname{position:relative;text-align:center;font-size:20px;}.countButtonsContainer{position:relative;width:calc(100% - 40px);height:20%;display:flex;margin:20px;margin-top:30px;img{position:absolute;top:100%;width:24px;height:24px;}}.chartsContainer{position:relative;width:calc(100% - 40px);height:100px;display:flex;margin:20px;}"]);
 
 /***/ }),
 
