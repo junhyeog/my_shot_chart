@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -439,7 +439,7 @@ const Index = () => {
   }, "My Shot Chart")), __jsx("svg", {
     viewBox: "-20 17 940 667",
     style: {
-      top: "30px"
+      top: "10px"
     },
     __source: {
       fileName: _jsxFileName,
@@ -1274,15 +1274,15 @@ const Index = () => {
 const HeaderStyle = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div.withConfig({
   displayName: "pages__HeaderStyle",
   componentId: "sc-1n2syxe-2"
-})(["position:absolute;top:0px;width:100%;height:35px;background-color:#ff5722;opacity:0.8;z-index:1;box-shadow:0 1px 2px 0 rgba(0,0,0,0.16);padding-top:20px;.text{width:100%;font-size:30px;font-family:'Bebas Neue',cursive;font-weight:normal;font-stretch:normal;font-style:normal;line-height:0.75;letter-spacing:1.5px;text-align:center;color:#ffffff;}"]);
+})(["position:relative;top:0px;width:100%;height:35px;background-color:#ff5722;opacity:0.8;z-index:1;box-shadow:0 1px 2px 0 rgba(0,0,0,0.16);padding-top:20px;.text{width:100%;font-size:30px;font-family:'Bebas Neue',cursive;font-weight:normal;font-stretch:normal;font-style:normal;line-height:0.75;letter-spacing:1.5px;text-align:center;color:#ffffff;}"]);
 const Background = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div.withConfig({
   displayName: "pages__Background",
   componentId: "sc-1n2syxe-3"
-})(["position:relative;display:block;width:100vw;height:100vh;font-family:'Noto Sans KR';font-size:30px;font-weight:100;font-stretch:normal;font-style:normal;line-height:1.17;letter-spacing:normal;svg{max-width:1000px;position:relative;top:0px;left:50%;transform:translate(-50%,0%);width:100vw;height:40vh;defs{z-index:2;}}.spotname{position:relative;text-align:center;font-size:20px;}.countButtonsContainer{position:relative;width:calc(100% - 40px);height:20%;display:flex;margin:20px;margin-top:30px;img{position:absolute;top:100%;width:24px;height:24px;}}.chartsContainer{position:relative;width:calc(100% - 40px);height:100px;display:flex;margin:20px;}"]);
+})(["position:relative;display:block;width:100vw;height:100vh;font-family:'Noto Sans KR';font-size:30px;font-weight:100;font-stretch:normal;font-style:normal;line-height:1.17;letter-spacing:normal;svg{max-width:1000px;position:relative;top:0px;left:50%;transform:translate(-50%,0%);width:100vw;height:40vh;defs{z-index:2;}}.spotname{position:relative;display:block;text-align:center;font-size:20px;}.countButtonsContainer{position:relative;width:calc(100% - 40px);height:20%;display:flex;margin:20px;margin-top:30px;img{position:absolute;top:100%;width:24px;height:24px;}}.chartsContainer{position:relative;width:calc(100% - 40px);height:100px;display:flex;margin:20px;}"]);
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

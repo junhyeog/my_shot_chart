@@ -102,7 +102,7 @@ const Index = () => {
             <HeaderStyle>
                 <div className="text">My Shot Chart</div>
             </HeaderStyle>
-            <svg viewBox="-20 17 940 667" style={{ top: "30px" }}>
+            <svg viewBox="-20 17 940 667" style={{ top: "10px" }}>
                 <line x1="0" x2="50" y1="306" y2="306" stroke="#000000" style={{ strokeDasharray: "6, 6", strokeWidth: "2", opacity: "0.5", shapeRendering: "crispedges" }}></line>
                 <line x1="846" x2="896" y1="306" y2="306" stroke="#000000" style={{ strokeDasharray: "6, 6", strokeWidth: "2", opacity: "0.5", shapeRendering: "crispedges" }}></line>
                 <line x1="50" x2="306" y1="306" y2="306" stroke="#000000" style={{ strokeDasharray: "6, 6", strokeWidth: "2", opacity: "0.5", shapeRendering: "crispedges" }}></line>
@@ -219,7 +219,7 @@ const Index = () => {
 }
 export default Index
 const HeaderStyle = styled.div`
-    position: absolute;
+    position: relative;
     top: 0px;
     width: 100%;
     height: 35px;
@@ -267,6 +267,7 @@ const Background = styled.div`
     }
     .spotname {
         position: relative;
+        display: block;
         text-align: center;
         font-size:20px;
     }
