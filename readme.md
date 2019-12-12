@@ -32,3 +32,5 @@ npm install
 1. 자신이 서있는 스팟의 종류에 따라 2점 스팟일 경우에는 첫 번째 Pie chart에 2점슛의 성공률이 표시되고, 3점 스팟일 경우에는 3점슛의 성공률이 표시된다.
 2. 자신이 서있는 스팟에서의 성공률이 표시된다.
 3. 스팟의 종류에 상관없이 모든 슛의 성공률이 표시된다.
+
+* [github repository](https://github.com/junhyeog/basketball_shoot_chart)
