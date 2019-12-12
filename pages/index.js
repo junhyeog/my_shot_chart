@@ -267,6 +267,7 @@ const Background = styled.div`
     }
     .spotname {
         position: relative;
+        width: 100%;
         display: block;
         text-align: center;
         font-size:20px;

@@ -71,6 +71,11 @@ const ButtonContainer = styled.div`
         font-size: 30px;
         outline: none;
         cursor: text;
+        -webkit-appearance: "textfield";
+        box-sizing: content-box;
+        &::-webkit-search-decoration {
+            -webkit-appearance: "none";
+        }
     }
     .minusButton {
         position: absolute;
